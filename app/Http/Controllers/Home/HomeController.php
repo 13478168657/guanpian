@@ -16,18 +16,19 @@ class HomeController extends Controller
 {
 
     public function index(Request $reques){
-        $firstCategory = Category::where('base_id',1)->orderBy('number','desc')->first();
-        $firstArticles = Article::where('category_id',$firstCategory->id)->where('status',3)->orderBy('created_at','desc')->take(10)->get();
-        $categories = Category::where('base_id',1)->where('id','!=',$firstCategory->id)->orderBy('number','desc')->limit(3)->get();
-        $fourCategory = Category::where('base_id',1)->orderBy('number','asc')->limit(1)->first();
-        $goods = Goods::where('status',3)->orderBy('created_at','desc')->get();
-        $fourArticles = Article::where('category_id',$fourCategory->id)->where('status',3)->orderBy('created_at','desc')->take(8)->get();
-        //友情链接
-        $links = Link::take(20)->get();
-        $baseConfig = BaseConfig::first();
-        //广告展示
-        $advertisements = Advertisement::where('status',3)->get();
-        return view('home.index',['firstCategory'=>$firstCategory,'categories'=>$categories,'fourCategory'=>$fourCategory,'firstArticles'=>$firstArticles,'fourArticles'=>$fourArticles,'links'=>$links,'goods'=>$goods,'baseConfig'=>$baseConfig,'advertisements'=>$advertisements]);
+        $data['secondNews'] = Article::where('category_id',6)->where('status',3)->OrderBy('id','desc')->take(12)->skip(1)->get();
+        $data['firstNews'] = Article::where('category_id',6)->where('status',3)->OrderBy('id','desc')->first();
+        $data['thirdNews'] = Article::where('category_id',6)->where('status',3)->OrderBy('id','desc')->take(2)->skip(13)->get();
+        $data['currentNews'] = Article::where('status',3)->orderBy('id','desc')->take(7)->get();
+        $data['knowNews'] = Article::where('category_id',9)->where('status',3)->OrderBy('id','desc')->take(6)->get();
+        $data['priceNews'] = Article::where('category_id',1)->where('status',3)->OrderBy('id','desc')->take(9)->get();
+        $data['fillNews'] = Article::where('category_id',2)->where('status',3)->OrderBy('id','desc')->take(9)->get();
+        $data['brandNews'] = Article::where('category_id',12)->where('status',3)->OrderBy('id','desc')->take(5)->get();
+        $data['studyNews'] = Article::where('category_id',13)->where('status',3)->OrderBy('id','desc')->take(6)->get();
+        $data['effectNews'] = Article::where('category_id',4)->where('status',3)->OrderBy('id','desc')->take(5)->get();
+        $data['imageNews'] = Article::where('category_id',11)->where('status',3)->OrderBy('id','desc')->take(10)->get();
+        return view('home.index',$data);
+
     }
 
     public function lists(Request $request,$id){
@@ -48,6 +49,7 @@ class HomeController extends Controller
         $articles = Article::where('status',3)->where('category_id',$id)->orderBy('created_at','desc')->paginate($pageSize);
         $pageSize = PageUtil::getPage($page,$articles->total(),$pageSize,$id,'s');
         return view('home.list',['category'=>$category,'categories'=>$categories,'articles'=>$articles,'pageSize'=>$pageSize,'page'=>$page]);
+        return view('home.list');
     }
 
     public function detail(Request $request,$id){
@@ -59,6 +61,7 @@ class HomeController extends Controller
         $prevArticle = Article::where('id',$id-1)->first();
         $categories = Category::where('base_id',1)->where('id','!=',$article->category_id)->orderBy('number','desc')->take(3)->get();
         return view('home.detail',['article'=>$article,'categories'=>$categories,'category'=>$category,'nextArticle'=>$nextArticle,'prevArticle'=>$prevArticle]);
+        return view('home.detail');
     }
 
     public function goodsDetail(Request $request,$id){

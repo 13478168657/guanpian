@@ -1,12 +1,11 @@
 @extends('layouts.main')
 @section('title')
-    <title>{{$article->title}}-马陆葡萄网</title>
-    <meta name="keywords" content="{{$article->meta_key_word}}" />
-    <meta name="description" content="{{$article->meta_description}}"/>
+    <title></title>
+    <meta name="keywords" content="" />
+    <meta name="description" content=""/>
 @endsection
 @section('content')
     <link rel="stylesheet" href="/css/details.css">
-    @include('layouts.header')
     <div class="news w clearfix">
         <div class="news-l">
             <div class="mainLeft">
@@ -22,15 +21,15 @@
                 </div>
                 <div class="content">
                     <?php
-                        echo htmlspecialchars_decode($article->content);
+                    echo htmlspecialchars_decode($article->content);
                     ?>
                 </div>
                 <div class="connext adimg">
                     @if($prevArticle)
-                    <span class="nextup"><a href="/thread-{{$prevArticle->id}}.html">{{$prevArticle->title}}</a></span>
+                        <span class="nextup"><a href="/thread-{{$prevArticle->id}}.html">{{$prevArticle->title}}</a></span>
                     @endif
                     @if($nextArticle)
-                    <span class="next"><a href="/thread-{{$nextArticle->id}}.html">{{$nextArticle->title}}</a></span>
+                        <span class="next"><a href="/thread-{{$nextArticle->id}}.html">{{$nextArticle->title}}</a></span>
                     @endif
                 </div>
             </div>
@@ -38,20 +37,6 @@
         <div class="news-r">
             <div class="news-r-n">
                 @foreach($categories as $k=>$cat)
-
-                    @if($k == 0)
-                        <?php
-                        $articles = \App\Models\Article::where('category_id',$cat->id)->where('status',3)->select('id','title','thumbPic')->orderBy('created_at','desc')->limit(9)->get();
-                        ?>
-                        <div class="news-r-t">
-                            <h2>{{$cat->name}}</h2>
-                        </div>
-                        <div class="tag">
-                            @foreach($articles as $article)
-                                <a href="/thread-{{$article->id}}.html">{{$article->title}}</a>
-                            @endforeach
-                        </div>
-                    @else
                         <?php
                         $articles = \App\Models\Article::where('category_id',$cat->id)->where('status',3)->select('id','title','thumbPic')->orderBy('created_at','desc')->limit(3)->get();
                         ?>
@@ -76,7 +61,6 @@
                                 <div style="clear:both"></div>
                             @endforeach
                         </ul>
-                    @endif
                 @endforeach
             </div>
         </div>

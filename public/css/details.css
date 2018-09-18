@@ -1,4 +1,4 @@
-.news{
+﻿.news{
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -20,10 +20,10 @@
     font-size: 14px;
 }
 .BreadNav a:hover{
-    color: #44b549;
+    color: #ab7d2a;
 }
 .BreadNav .hover{
-    color: #44b549;
+    color: #ab7d2a;
 }
 .mainLeft h1{
     font-size: 32px;
@@ -43,6 +43,9 @@
 }
 .content{
     font-size: 14px;
+}
+.content p{
+     color: #666；
 }
  .connext {
     font-size: 15px;
@@ -92,6 +95,14 @@
     width: 106px;
     height: 80px;
 }
+.side_class3 li img:hover{
+	transition: all 0.6s;
+			 transform:scale(1.2);
+            -ms-transform:scale(1.2);
+            -webkit-transform:scale(1.2);
+            -o-transform:scale(1.2);
+            -moz-transform:scale(1.2);
+}
 .side_class3 li .rtext {
     width: 180px;
     height: 80px;
@@ -111,6 +122,7 @@
     width: 106px;
     height: 80px;
     float: left;
+	overflow:hidden;
 }
 .side_class3 li .rtext .side3_title a {
     color: #666;
@@ -123,12 +135,12 @@
 .tag a{
     display: inline-block;
     padding: 10px;
-    background-color: #44b549;
+    background-color: #ab7d2a;
     color: #ffffff;
     margin: 5px;
 }
 .tag a:hover{
-    background-color: #019c08;
+    background-color: #b0a828;
     color: #ffffff;
 }
 
@@ -137,9 +149,60 @@ p{
 }
 
 .content{
+	width:810px;
     margin-top:30px;
+}
+.xiangguan{
+	margin-left:20px;
+	margin-top:100px;
+	border-bottom:1px solid #e2e2e2;
+	font-size:20px;
+}
+.xiangguan span{
+    display: inline-block;
+    padding-bottom:10px;
+    border-bottom:2px solid #ab7d2a;
+}
+
+.yuedu-left{
+    margin-left:20px;
+    margin-top: 30px;
+    width: 400px;
+    float: left;
+}
+.yuedu-right{
+    margin-top: 30px;
+    width: 400px;
+    float: right;
+}
+
+.yuedu-left li{
+    border-bottom: 1px dashed #e2e2e2;
+    padding:20px 20px 20px 5px;
+}
+.yuedu-left li a{
+    color: #666;
+}
+.yuedu-left li a:hover{
+    color: #ab7d2a;
 }
 
 
-
-
+.yuedu-right li{
+   border-bottom: 1px dashed #e2e2e2;
+   padding:20px 20px 20px 5px;
+}
+.yuedu-right li a{
+    color: #666;
+}
+.yuedu-right li a:hover{
+    color: #ab7d2a;
+}
+.shengming{
+    border: 1px solid #e2e2e2;
+    font-size: 15px;
+    line-height: 30px;
+    padding:20px;
+     color: #666;
+     margin-top:100px;
+}

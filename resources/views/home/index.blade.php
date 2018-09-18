@@ -1,157 +1,329 @@
 @extends('layouts.main')
 @section('title')
-    @if($baseConfig)
-    <title>{{$baseConfig->title}}-{{$baseConfig->name}}</title>
-    <meta name="keywords" content="{{$baseConfig->home_key_word}}" />
-    <meta name="description" content="{{$baseConfig->home_meta_description}}" />
-    @endif
+    <title></title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+@endsection
+@section('css')
+    <link rel="stylesheet" href="/css/lunbotu.css">
+    <link href="/css/baicha.css" rel="stylesheet" type="text/css" />
 @endsection
 @section('content')
-    <link rel="stylesheet" type="text/css" href="/css/lunbotu.css">
-    @include('layouts.header')
-    <!--main  start-->
-    <div class="main w">
-        <div class="main-l">
-            <ul class="main-l-t">
-                @foreach($firstArticles as $firstArticle)
-                <li><a href="/thread-{{$firstArticle->id}}.html">{{$firstArticle->title}}<span>></span></a>
-                </li>
-                @endforeach
-            </ul>
-        </div>
-        <div class="main-c">
-            <div class="content">
-                <div class="a-content">
-                    <div class="carousel-content">
-                        <ul class="carousel">
-                            @foreach($advertisements as $ad)
-                            <li><img src="{{env('IMG_URL')}}/{{$ad->photo}}"></li>
-                            @endforeach
-                        </ul>
-                        <ul class="img-index"></ul>
-                        <div class="carousel-prev"><img src="/images/left1.png"></div>
-                        <div class="carousel-next"><img src="/images/right1.png"></div>
-                    </div>
+            <!--content start-->
+    <div class="content w  clearfix">
+        <div class="content-l">
+            <div class="example">
+                <div class="ft-carousel" id="carousel_1">
+                    <ul class="carousel-inner">
+                        <li class="carousel-item"><img src="images/a1.jpg" /></li>
+                        <li class="carousel-item"><img src="images/a2.jpg" /></li>
+                        <li class="carousel-item"><img src="images/a3.jpg" /></li>
+                    </ul>
                 </div>
             </div>
         </div>
-        <div class="main-r">
-            <div class="main-r-t">
-                <h3><a href="/index{{$fourCategory->id}}.html">{{$fourCategory->name}}</a></h3>
-                <span><a href="/index{{$fourCategory->id}}.html">更多</a></span>
+        <div class="content-m">
+            <div class="news_text" id="ajbcxw">
+                @if($firstNews)
+                <h2 class="red"><a href="/html/3291.html" title="安吉白茶协会第四届二次理事会议今日召开" target="_blank">{{substr($firstNews->title,0,24)}}</a>
+                    <p>{{$firstNews->meta_description}}</p>
+                </h2>
+                @endif
+                @if($secondNews)
+                <h3>
+                    @foreach($secondNews as $second)
+                    <a href="/html/3278.html" title="{{$second->title}}" target="_blank">{{substr($second->title,0,24)}}</a>
+                    @endforeach
+                    <div class="clear"></div>
+                </h3>
+                @endif
             </div>
-            <div class="main-r-n">
-                <ul>
-                    @foreach($fourArticles as $article)
-                        <li><a href="/thread-{{$article->id}}.html">【公告】{{(mb_strlen($article->title)>=15)?mb_substr($article->title,0,14).'...':$article->title}}</a></li>
+            <div class="news_img clearfix">
+                @if($thirdNews)
+                    @foreach($thirdNews as $third)
+                        <div class="img ">
+                            <div class="imgfl">
+                                <a href="" target="_blank">
+                                    <span style="position:relative">
+                                        <span class="ImgBox">
+                                            <img src="/images/2018319165139590.jpg">
+                                        </span>
+                                    </span>
+                                </a>
+                            </div>
+                            <a href="">{{substr($third->title,0,21)}}</a>
+                        </div>
+                    @endforeach
+                @endif
+            </div>
+        </div>
+        <div class="content-r">
+            <div class="box mb25" id="rmw_fangtan">
+                <h3><a href="http://fangtan.people.com.cn/"><span class="rmicon"></span>新闻排行</a></h3>
+                @foreach($currentNews as  $currKey => $currNews)
+                @if($currKey == 0)
+                <p class="imgstyle">
+                    <a href="http://ft.people.com.cn/fangtanGroup.do?id=16784" target="_blank">
+                        <img src="images/luntan.jpg" alt=" " width="130" height="90" border="0">
+                    </a>{{substr($currNews->title,0,24)}} <a href="">{{substr($currNews->title,0,24)}} </a>
+                </p>
+                @else
+                    <?php
+                        break;
+                    ?>
+                @endif
+                @endforeach
+                <ul class="list14">
+                    @foreach($currentNews as  $currKey => $currNews)
+                       @if($currKey> 0)
+                    <li><a href="http://ft.people.com.cn/fangtanDetail.do?pid=16782">{{mb_substr($currNews->title,0,10)}}</a></li>
+                    @endif
                     @endforeach
                 </ul>
             </div>
         </div>
     </div>
-    <!--main  end-->
-    <!--品牌种类价格专区 start-->
-    <div class="pin w clearfix">
-        <div class="pin-t">
-            <div class="pin-l fl"><h2>{{$firstCategory->name}}</h2></div>
-            <div class="pin-r fr">
-                <ul>
-                    @foreach($firstArticles as $firstArticle)
-                    <li><a href="/thread-{{$firstArticle->id}}.html">{{$firstArticle->title}}</a></li>
-                    @endforeach
-                </ul>
+    <div class="contentq w  clearfix">
+        <div class="contentq-l">
+            <div class="example">
+                <div class="ft-carousel" id="carousel_1">
+                    <ul class="carousel-inner left-inner clearfix">
+                        <li><a href="">茶叶鉴别</a></li>
+                    </ul>
+                    <ul class="news_img_xiao clearfix">
+                        @foreach($knowNews as $knKey => $knew)
+                            @if($knKey <2)
+                                <div class="imgll imgfll">
+                                    <a href="" target="_blank"><span class="ImgBox"><img src="images/20150313123995349534.jpg"></span>{{mb_substr($knew->title,0,10)}}</a>
+                                </div>
+                            @else
+                                <?php
+                                    break;
+                                ?>
+                            @endif
+                        @endforeach
+                    </ul>
+                    <ul class="text-left">
+                        @foreach($knowNews as $knKey => $knew)
+                            @if($knKey >= 2)
+                        <li><a href="">{{mb_substr($knew->title,0,25)}}</a></li>
+                            @endif
+                        @endforeach
+                    </ul>
+                </div>
             </div>
         </div>
-        <div class="fenlei">
-            @foreach($goods as $good)
-            <div class="fenlei-t">
-                <a href="/g-{{$good->id}}.html"><img src="{{env('IMG_URL')}}/{{$good->thumbPic}}" alt=""></a>
-                <a href="/g-{{$good->id}}.html"><h3>{{$good->title}}</h3></a>
-                <p>市场价：<del>{{$good->market_price}}</del>元</p>
-                <p>会员价：<span>{{$good->member_price}}</span>元</p>
-            </div>
-            @endforeach
-        </div>
-    </div>
-    <!--品牌种类价格专区 end-->
-    <!--ad start-->
-    <div class="ad w">
-        <img src="/images/ad.jpg" alt="">
-    </div>
-    <!--ad end-->
-    <!--news start-->
-    <div class="news w clearfix">
-        @foreach($categories as $category)
-        <div class="news-l">
-            <div class="news-l-t">
-                <h2><a href="/index{{$category->id}}.html">{{$category->name}}</a></h2>
-                <span><a href="/index{{$category->id}}.html">更多</a></span>
-            </div>
-            <?php
-                $articles = \App\Models\Article::where('category_id',$category->id)->select('id','title','created_at')->orderBy('created_at','desc')->take(8)->get();
-            ?>
-            <div class="news-l-b">
-                <ul>
-                    @foreach($articles as $article)
-                        <?php
-
-//                                dd(strlen($article->title));
+        <div class="contentq-m">
+            <div class="news_text" id="ajbcxw">
+                @foreach($priceNews as $pKey => $pNew)
+                @if($pKey == 0)
+                <h2 class="red"><a href="/html/3291.html" title="安吉白茶协会第四届二次理事会议今日召开" target="_blank">{{$pNew->title}}</a>
+                    <p>{{$pNew->meta_meta_description}}</p>
+                </h2>
+                @else
+                    <?php
+                        break;
+                    ?>
+                @endif
+                @endforeach
+                <h3>
+                    @foreach($priceNews as $pKey => $pNew)
+                        @if($pKey >=1 && $pKey <=6)
+                            <a href="/html/3278.html" title="入夏安吉白茶树生长情况" target="_blank">{{mb_substr($pNew->title,0,10)}}</a>
+                        @else
+                            <?php
+                                break;
                             ?>
-                    <li><a href="/thread-{{$article->id}}.html">{{(mb_strlen($article->title)>=18)?mb_substr($article->title,0,16).'...':$article->title}}</a><span>{{date('Y-m-d',strtotime($article->created_at))}}</span></li>
+                        @endif
                     @endforeach
-
+                    <div class="clear"></div>
+                </h3>
+            </div>
+            <div class="news_img clearfix">
+                @foreach($priceNews as $pKey => $pNew)
+                    @if($pKey > 6)
+                        <div class="img ">
+                            <div class="imgfl">
+                                <a href="" target="_blank">
+                                    <span style="position:relative">
+                                        <span class="ImgBox">
+                                            <img src="images/2018319165139590.jpg">
+                                        </span>
+                                    </span>
+                                </a>
+                            </div>
+                            <a href="">{{$pNew->title}}</a>
+                        </div>
+                    @else
+                        <?php
+                        break;
+                        ?>
+                    @endif
+                @endforeach
+            </div>
+        </div>
+        <div class="content-r">
+            <div class="box mb25" id="rmw_fangtan">
+                <h3><a href="http://fangtan.people.com.cn/"><span class="rmicon"></span>瓜片冲泡方法</a></h3>
+                @foreach($fillNews as $fillKey => $fillNew)
+                    @if($fillKey == 0)
+                <p class="imgstyle"><a href="http://ft.people.com.cn/fangtanGroup.do?id=16784" target="_blank"><img src="images/luntan.jpg" alt="{{$fillNew->title}}" width="130" height="90" border="0"></a>{{$fillNew->title}}<a href="http://ft.people.com.cn/fangtanGroup.do?id=16784">［阅读] </a>
+                    @else
+                        <?php
+                            break;
+                        ?>
+                    @endif
+                </p>
+                @endforeach
+                <ul class="list14">
+                    @foreach($fillNews as $fillKey => $fillNew)
+                        @if($fillKey > 0)
+                    <li><a href="http://ft.people.com.cn/fangtanDetail.do?pid=16782">{{$fillNew->title}}</a></li>
+                        @else
+                            <?php
+                                break;
+                            ?>
+                        @endif
+                    @endforeach
                 </ul>
             </div>
         </div>
-        @endforeach
     </div>
+    <!--content end-->
+    <!--content start-->
+    <div class="contentq w  clearfix">
+        <div class="contentq-l">
+            <div class="example">
+                <div class="ft-carousel" id="carousel_1">
+                    <ul class="carousel-inner left-inner clearfix">
+                        <li><a href="">瓜片品牌</a></li>
+                    </ul>
+                    <ul class="news_img_xiao clearfix">
+                        @foreach($brandNews as $brandKey => $brandNew)
+                            @if($brandKey <= 1)
+                        <div class="imgll imgfll">
+                            <a href="" target="_blank"><span class="ImgBox"><img src="images/20150313123995349534.jpg"></span>
+                                <p>{{$brandNew->title}}</p>
+                            </a>
+                        </div>
+                            @else
+                                <?php
+                                    break;
+                                ?>
+                            @endif
+                        @endforeach
+                    </ul>
+                    <ul class="text-left">
+                        @foreach($brandNews as $brandKey => $brandNew)
+                            @if($brandKey > 1)
+                                <li><a href="">{{$brandNew->title}}</a></li>
+                            @else
+                            <?php
+                                break;
+                            ?>
+                            @endif
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="contentq-m">
+            <div class="news_text" id="ajbcxw">
+                @foreach($studyNews as $styKey => $studyNew)
+                    @if($styKey == 0)
+                        <h2 class="red"><a href="/html/3291.html" title="{{$studyNew->title}}" target="_blank">{{$studyNew->title}}</a>
+                        <p>{{$studyNew->meta_description}}</p>
+                    @else
+                        <?php
+                           break;
+                        ?>
+                    @endif
+                </h2>
+                @endforeach
+                <h3>
+                    @foreach($studyNews as $styKey => $studyNew)
+                        @if($styKey >0 && $styKey <= 6)
+                            <a href="/html/3278.html" title="入夏安吉白茶树生长情况" target="_blank">入夏安吉白茶树生长</a>
+                        @else
+                            <?php
+                                break;
+                            ?>
+                        @endif
+                    @endforeach
 
-    <div class="flinks w">
-        友情链接：
-        @foreach($links as $link)
-            <a href="{{$link->url}}">{{$link->name}}</a>
-            <span>|</span>
-        @endforeach
 
+
+                    <div class="clear"></div>
+                </h3>
+            </div>
+            <div class="news_img clearfix">
+                @foreach($studyNews as $styKey => $studyNew)
+                    @if($styKey > 6)
+                        <div class="img ">
+                            <div class="imgfl"><a href="" target="_blank"><span style="position:relative"><span class="ImgBox"><img src="images/2018319165139590.jpg"></span></a> </div>
+                            <a href="">{{$studyNew->title}}</a>
+                        </div>
+                    @else
+                        <?php
+                            break;
+                        ?>
+                    @endif
+                @endforeach
+            </div>
+        </div>
+
+        <div class="content-r">
+            <div class="box mb25" id="rmw_fangtan">
+                <h3><a href="http://fangtan.people.com.cn/"><span class="rmicon"></span>瓜片功效</a></h3>
+                @foreach($effectNews as $effKey => $effNew)
+                    @if($effKey == 0)
+                <p class="imgstyle">
+                    <a href="http://ft.people.com.cn/fangtanGroup.do?id=16784" target="_blank">
+                        <img src="images/luntan.jpg" alt=" " width="130" height="90" border="0">
+                    </a>{{$effNew->title}}<a href="">［阅读] </a>
+                </p>
+                    @else
+                        <?php
+                        break;
+                        ?>
+                    @endif
+                @endforeach
+                <ul class="list14">
+                    @foreach($effectNews as $effKey => $effNew)
+                        @if($effKey > 0)
+                            <li><a href="http://ft.people.com.cn/fangtanDetail.do?pid=16782">{{$effNew->title}}</a></li>
+                        @else
+                            <?php
+                            break;
+                            ?>
+                        @endif
+                    @endforeach
+                </ul>
+            </div>
+        </div>
     </div>
-@endsection
-@section('script')
-    <!--links end-->
+    <!--content end-->
     <!--轮播图 start-->
-    <script type="text/javascript" src="/scripts/carousel.js"></script>
-    <script type="text/javascript">
-        $(function(){
-            $(".carousel-content").carousel({
-                carousel : ".carousel",//轮播图容器
-                indexContainer : ".img-index",//下标容器
-                prev : ".carousel-prev",//左按钮
-                next : ".carousel-next",//右按钮
-                timing : 3000,//自动播放间隔
-                animateTime : 700,//动画时间
-                autoPlay : true,//是否自动播放 true/false
-                direction : "left",//滚动方向 right/left
-            });
-            
-            $(".carousel-content").hover(function(){
-                $(".carousel-prev,.carousel-next").fadeIn(300);
-            },function(){
-                $(".carousel-prev,.carousel-next").fadeOut(300);
-            });
+    <div class="float_nav" id="float"></div>
+    <div class="wrapper">
 
-            $(".carousel-prev").hover(function(){
-                $(this).find("img").attr("src","./images/left2.png");
-            },function(){
-                $(this).find("img").attr("src","./images/left1.png");
-            });
-            $(".carousel-next").hover(function(){
-                $(this).find("img").attr("src","./images/right2.png");
-            },function(){
-                $(this).find("img").attr("src","./images/right1.png");
-            });
-        });
-    </script>
-    <!--轮播图 end-->
-@endsection
-@section('css')
-    <link rel="stylesheet" href="/css/index.css">
+        <div id="demo01" class="flexslider">
+            <ul class="slides">
+                <li>
+                @foreach($imageNews as $imgKey => $imgNew)
+                    <div class="focuspic pic{{$imgKey+1}}">
+                        <a href="/html/3284.html">
+                            <p class="img"><span class="ImgBox"><img src="images/20180725084239073907.jpg"></span><em>{{$imgNew->title}}</em><i></i></p>
+                        </a>
+                    </div>
+                @endforeach
+                </li>
+                <li>
+
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
 @endsection
