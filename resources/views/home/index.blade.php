@@ -25,14 +25,14 @@
         <div class="content-m">
             <div class="news_text" id="ajbcxw">
                 @if($firstNews)
-                <h2 class="red"><a href="/html/3291.html" title="安吉白茶协会第四届二次理事会议今日召开" target="_blank">{{substr($firstNews->title,0,24)}}</a>
+                <h2 class="red"><a href="/thread-{{$firstNews->id}}.html" target="_blank">{{substr($firstNews->title,0,24)}}</a>
                     <p>{{$firstNews->meta_description}}</p>
                 </h2>
                 @endif
                 @if($secondNews)
                 <h3>
                     @foreach($secondNews as $second)
-                    <a href="/html/3278.html" title="{{$second->title}}" target="_blank">{{substr($second->title,0,24)}}</a>
+                    <a href="/thread-{{$second->id}}.html" title="{{$second->title}}" target="_blank">{{substr($second->title,0,24)}}</a>
                     @endforeach
                     <div class="clear"></div>
                 </h3>
@@ -43,7 +43,7 @@
                     @foreach($thirdNews as $third)
                         <div class="img ">
                             <div class="imgfl">
-                                <a href="" target="_blank">
+                                <a href="thread-{{$third->id}}.html" target="_blank">
                                     <span style="position:relative">
                                         <span class="ImgBox">
                                             <img src="/images/2018319165139590.jpg">
@@ -51,7 +51,7 @@
                                     </span>
                                 </a>
                             </div>
-                            <a href="">{{substr($third->title,0,21)}}</a>
+                            <a href="thread-{{$third->id}}.html">{{substr($third->title,0,21)}}</a>
                         </div>
                     @endforeach
                 @endif
@@ -59,12 +59,12 @@
         </div>
         <div class="content-r">
             <div class="box mb25" id="rmw_fangtan">
-                <h3><a href="http://fangtan.people.com.cn/"><span class="rmicon"></span>新闻排行</a></h3>
+                <h3><a href=""><span class="rmicon"></span>新闻排行</a></h3>
                 @foreach($currentNews as  $currKey => $currNews)
                 @if($currKey == 0)
                 <p class="imgstyle">
-                    <a href="http://ft.people.com.cn/fangtanGroup.do?id=16784" target="_blank">
-                        <img src="images/luntan.jpg" alt=" " width="130" height="90" border="0">
+                    <a href="thread-{{$currNews->id}}.html" target="_blank">
+                        <img src="{{env('IMG_URL')}}/{{$currNews->thumbPic}}" alt=" " width="130" height="90" border="0">
                     </a>{{substr($currNews->title,0,24)}} <a href="">{{substr($currNews->title,0,24)}} </a>
                 </p>
                 @else
@@ -76,7 +76,7 @@
                 <ul class="list14">
                     @foreach($currentNews as  $currKey => $currNews)
                        @if($currKey> 0)
-                    <li><a href="http://ft.people.com.cn/fangtanDetail.do?pid=16782">{{mb_substr($currNews->title,0,10)}}</a></li>
+                    <li><a href="thread-{{$currNews->id}}.html">{{mb_substr($currNews->title,0,10)}}</a></li>
                     @endif
                     @endforeach
                 </ul>
@@ -94,7 +94,7 @@
                         @foreach($knowNews as $knKey => $knew)
                             @if($knKey <2)
                                 <div class="imgll imgfll">
-                                    <a href="" target="_blank"><span class="ImgBox"><img src="images/20150313123995349534.jpg"></span>{{mb_substr($knew->title,0,10)}}</a>
+                                    <a href="/thread-{{$knew->id}}.html" target="_blank"><span class="ImgBox"><img src="{{env('IMG_URL')}}/{{$knew->thumbPic}}"></span>{{mb_substr($knew->title,0,10)}}</a>
                                 </div>
                             @else
                                 <?php
@@ -106,7 +106,7 @@
                     <ul class="text-left">
                         @foreach($knowNews as $knKey => $knew)
                             @if($knKey >= 2)
-                        <li><a href="">{{mb_substr($knew->title,0,25)}}</a></li>
+                        <li><a href="/thread-{{$knew->id}}.html">{{mb_substr($knew->title,0,25)}}</a></li>
                             @endif
                         @endforeach
                     </ul>
@@ -117,7 +117,7 @@
             <div class="news_text" id="ajbcxw">
                 @foreach($priceNews as $pKey => $pNew)
                 @if($pKey == 0)
-                <h2 class="red"><a href="/html/3291.html" title="安吉白茶协会第四届二次理事会议今日召开" target="_blank">{{$pNew->title}}</a>
+                <h2 class="red"><a href="/thread-{{$pNew->id}}.html" title="" target="_blank">{{$pNew->title}}</a>
                     <p>{{$pNew->meta_meta_description}}</p>
                 </h2>
                 @else
@@ -129,7 +129,7 @@
                 <h3>
                     @foreach($priceNews as $pKey => $pNew)
                         @if($pKey >=1 && $pKey <=6)
-                            <a href="/html/3278.html" title="入夏安吉白茶树生长情况" target="_blank">{{mb_substr($pNew->title,0,10)}}</a>
+                            <a href="/thread-{{$pNew->id}}.html" title="" target="_blank">{{mb_substr($pNew->title,0,10)}}</a>
                         @else
                             <?php
                                 break;
@@ -144,15 +144,15 @@
                     @if($pKey > 6)
                         <div class="img ">
                             <div class="imgfl">
-                                <a href="" target="_blank">
+                                <a href="/thread-{{$pNew->id}}.html" target="_blank">
                                     <span style="position:relative">
                                         <span class="ImgBox">
-                                            <img src="images/2018319165139590.jpg">
+                                            <img src="{{env('IMG_URL')}}/{{$pNew->thumbPic}}">
                                         </span>
                                     </span>
                                 </a>
                             </div>
-                            <a href="">{{$pNew->title}}</a>
+                            <a href="/thread-{{$pNew->id}}.html">{{$pNew->title}}</a>
                         </div>
                     @else
                         <?php
@@ -164,10 +164,10 @@
         </div>
         <div class="content-r">
             <div class="box mb25" id="rmw_fangtan">
-                <h3><a href="http://fangtan.people.com.cn/"><span class="rmicon"></span>瓜片冲泡方法</a></h3>
+                <h3><a href=""><span class="rmicon"></span>瓜片冲泡方法</a></h3>
                 @foreach($fillNews as $fillKey => $fillNew)
                     @if($fillKey == 0)
-                <p class="imgstyle"><a href="http://ft.people.com.cn/fangtanGroup.do?id=16784" target="_blank"><img src="images/luntan.jpg" alt="{{$fillNew->title}}" width="130" height="90" border="0"></a>{{$fillNew->title}}<a href="http://ft.people.com.cn/fangtanGroup.do?id=16784">［阅读] </a>
+                <p class="imgstyle"><a href="/thread-{{$fillNew->id}}.html" target="_blank"><img src="env('IMG_URL')}}/{{$fillNew->thumbPic}}" alt="{{$fillNew->title}}" width="130" height="90" border="0"></a>{{$fillNew->title}}<a href="/thread-{{$fillNew->id}}.html">［阅读] </a>
                     @else
                         <?php
                             break;
@@ -178,7 +178,7 @@
                 <ul class="list14">
                     @foreach($fillNews as $fillKey => $fillNew)
                         @if($fillKey > 0)
-                    <li><a href="http://ft.people.com.cn/fangtanDetail.do?pid=16782">{{$fillNew->title}}</a></li>
+                    <li><a href="/thread-{{$fillNew->id}}.html">{{$fillNew->title}}</a></li>
                         @else
                             <?php
                                 break;
@@ -202,7 +202,7 @@
                         @foreach($brandNews as $brandKey => $brandNew)
                             @if($brandKey <= 1)
                         <div class="imgll imgfll">
-                            <a href="" target="_blank"><span class="ImgBox"><img src="images/20150313123995349534.jpg"></span>
+                            <a href="/thread-{{$brandNew->id}}.html" target="_blank"><span class="ImgBox"><img src="env('IMG_URL')}}/{{$brandNew->thumbPic}}"></span>
                                 <p>{{$brandNew->title}}</p>
                             </a>
                         </div>
@@ -216,7 +216,7 @@
                     <ul class="text-left">
                         @foreach($brandNews as $brandKey => $brandNew)
                             @if($brandKey > 1)
-                                <li><a href="">{{$brandNew->title}}</a></li>
+                                <li><a href="/thread-{{$brandNew->id}}.html">{{$brandNew->title}}</a></li>
                             @else
                             <?php
                                 break;
@@ -231,7 +231,7 @@
             <div class="news_text" id="ajbcxw">
                 @foreach($studyNews as $styKey => $studyNew)
                     @if($styKey == 0)
-                        <h2 class="red"><a href="/html/3291.html" title="{{$studyNew->title}}" target="_blank">{{$studyNew->title}}</a>
+                        <h2 class="red"><a href="/thread-{{$studyNew->id}}.html" title="{{$studyNew->title}}" target="_blank">{{$studyNew->title}}</a>
                         <p>{{$studyNew->meta_description}}</p>
                     @else
                         <?php
@@ -243,7 +243,7 @@
                 <h3>
                     @foreach($studyNews as $styKey => $studyNew)
                         @if($styKey >0 && $styKey <= 6)
-                            <a href="/html/3278.html" title="入夏安吉白茶树生长情况" target="_blank">入夏安吉白茶树生长</a>
+                            <a href="/thread-{{$studyNew->id}}.html" title="" target="_blank">{{$studyNew->title}}</a>
                         @else
                             <?php
                                 break;
@@ -259,8 +259,8 @@
             <div class="news_img clearfix">
                 @foreach($studyNews as $styKey => $studyNew)
                     @if($styKey > 6)
-                        <div class="img ">
-                            <div class="imgfl"><a href="" target="_blank"><span style="position:relative"><span class="ImgBox"><img src="images/2018319165139590.jpg"></span></a> </div>
+                        <div class="img">
+                            <div class="imgfl"><a href="/thread-{{$studyNew->id}}.html" target="_blank"><span style="position:relative"><span class="ImgBox"><img src="env('IMG_URL')}}/{{$studyNew->thumbPic}}"></span></a> </div>
                             <a href="">{{$studyNew->title}}</a>
                         </div>
                     @else
@@ -274,13 +274,13 @@
 
         <div class="content-r">
             <div class="box mb25" id="rmw_fangtan">
-                <h3><a href="http://fangtan.people.com.cn/"><span class="rmicon"></span>瓜片功效</a></h3>
+                <h3><a href=""><span class="rmicon"></span>瓜片功效</a></h3>
                 @foreach($effectNews as $effKey => $effNew)
                     @if($effKey == 0)
                 <p class="imgstyle">
-                    <a href="http://ft.people.com.cn/fangtanGroup.do?id=16784" target="_blank">
-                        <img src="images/luntan.jpg" alt=" " width="130" height="90" border="0">
-                    </a>{{$effNew->title}}<a href="">［阅读] </a>
+                    <a href="/thread-{{$effNew->id}}.html" target="_blank">
+                        <img src="env('IMG_URL')}}/{{$effNew->thumbPic}}" alt=" " width="130" height="90" border="0">
+                    </a>{{$effNew->title}}<a href="/thread-{{$effNew->id}}.html">［阅读] </a>
                 </p>
                     @else
                         <?php
@@ -291,7 +291,7 @@
                 <ul class="list14">
                     @foreach($effectNews as $effKey => $effNew)
                         @if($effKey > 0)
-                            <li><a href="http://ft.people.com.cn/fangtanDetail.do?pid=16782">{{$effNew->title}}</a></li>
+                            <li><a href="/thread-{{$effNew->id}}.html">{{$effNew->title}}</a></li>
                         @else
                             <?php
                             break;
@@ -312,8 +312,8 @@
                 <li>
                 @foreach($imageNews as $imgKey => $imgNew)
                     <div class="focuspic pic{{$imgKey+1}}">
-                        <a href="/html/3284.html">
-                            <p class="img"><span class="ImgBox"><img src="images/20180725084239073907.jpg"></span><em>{{$imgNew->title}}</em><i></i></p>
+                        <a href="/thread-{{$imgNew->id}}.html">
+                            <p class="img"><span class="ImgBox"><img src="env('IMG_URL')}}/{{$imgNew->thumbPic}}"></span><em>{{$imgNew->title}}</em><i></i></p>
                         </a>
                     </div>
                 @endforeach
