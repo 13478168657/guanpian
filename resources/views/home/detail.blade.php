@@ -33,6 +33,43 @@
                     @endif
                 </div>
             </div>
+            <div class="yuedu">
+                <div class="xiangguan"><span>相关阅读</span></div>
+            </div>
+            <div class="yuedu-left clearfix">
+                <ul>
+                    <li class="item clear active">
+                        <span class="li_dot left">
+                            <i></i>
+                        </span>
+                        <a class="no_line left" href="/zzrq/qt/1243.html">虫草，不是所有体质都适合，这三种人要注意!</a>
+                    </li>
+                    <li class="item clear active">
+                        <span class="li_dot left">
+                            <i></i>
+                        </span>
+                        <a class="no_line left" href="/zzrq/sz/1242.html">冬虫夏草怎么吃最好</a>
+                    </li>
+                    <li class="item clear active">
+                        <span class="li_dot left">
+                            <i></i>
+                        </span>
+                        <a class="no_line left" href="/dcxcjg/1240.html">下半年冬虫夏草价格上涨似乎成为必然</a>
+                    </li>
+                    <li class="item clear active">
+                        <span class="li_dot left">
+                            <i></i>
+                        </span>
+                        <a class="no_line left" href="/zzrq/qt/1237.html">冬春换季呼吸道疾病高发，吃冬虫夏草最有效!</a>
+                    </li>
+                    <li class="item clear active">
+                        <span class="li_dot left">
+                            <i></i>
+                        </span>
+                        <a class="no_line left" href="/zzrq/qt/1237.html">冬春换季呼吸道疾病高发，吃冬虫夏草最有效!</a>
+                    </li>
+                </ul>
+            </div>
         </div>
         <div class="news-r">
             <div class="news-r-n">
