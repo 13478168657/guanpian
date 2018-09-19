@@ -15,9 +15,9 @@
             <div class="example">
                 <div class="ft-carousel" id="carousel_1">
                     <ul class="carousel-inner">
-                        <li class="carousel-item"><img src="images/a1.jpg" /></li>
-                        <li class="carousel-item"><img src="images/a2.jpg" /></li>
-                        <li class="carousel-item"><img src="images/a3.jpg" /></li>
+                        @foreach($lunbo as $lb)
+                        <li class="carousel-item"><img src="{{env('IMG_URL')}}/{{$lb->photo}}" /></li>
+                        @endforeach
                     </ul>
                 </div>
             </div>

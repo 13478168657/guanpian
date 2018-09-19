@@ -27,6 +27,7 @@ class HomeController extends Controller
         $data['studyNews'] = Article::where('category_id',13)->where('status',3)->OrderBy('id','desc')->take(6)->get();
         $data['effectNews'] = Article::where('category_id',4)->where('status',3)->OrderBy('id','desc')->take(5)->get();
         $data['imageNews'] = Article::where('category_id',11)->where('status',3)->OrderBy('id','desc')->take(10)->get();
+        $data['lunbo'] = Advertisement::where('position_id',4)->get();
         return view('home.index',$data);
 
     }
