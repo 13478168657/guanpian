@@ -234,10 +234,6 @@
                     @foreach($studyNews as $styKey => $studyNew)
                         @if($styKey >0 && $styKey <= 6)
                             <a href="/thread-{{$studyNew->id}}.html" title="" target="_blank">{{mb_substr($studyNew->title,0,9)}}</a>
-                        @else
-                            <?php
-                                break;
-                            ?>
                         @endif
                     @endforeach
 
@@ -253,10 +249,6 @@
                             <div class="imgfl"><a href="/thread-{{$studyNew->id}}.html" target="_blank"><span style="position:relative"><span class="ImgBox"><img src="{{env('IMG_URL')}}/{{$studyNew->thumbPic}}"></span></a> </div>
                             <a href="">{{mb_substr($studyNew->title,0,14)}}</a>
                         </div>
-                    @else
-                        <?php
-                            break;
-                        ?>
                     @endif
                 @endforeach
             </div>
@@ -282,10 +274,6 @@
                     @foreach($effectNews as $effKey => $effNew)
                         @if($effKey > 0)
                             <li><a href="/thread-{{$effNew->id}}.html">{{mb_substr($effNew->title,0,16)}}</a></li>
-                        @else
-                            <?php
-                            break;
-                            ?>
                         @endif
                     @endforeach
                 </ul>
