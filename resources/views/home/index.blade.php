@@ -120,7 +120,7 @@
                 @foreach($priceNews as $pKey => $pNew)
                 @if($pKey == 0)
                 <h2 class="red"><a href="/thread-{{$pNew->id}}.html" title="" target="_blank">{{mb_substr($pNew->title,0,20)}}</a>
-                    <p>{{$pNew->meta_meta_description}}</p>
+                    <p>{{$pNew->meta_description}}</p>
                 </h2>
                 @else
                     <?php
