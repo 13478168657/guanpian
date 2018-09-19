@@ -202,7 +202,7 @@
                         @foreach($brandNews as $brandKey => $brandNew)
                             @if($brandKey <= 1)
                         <div class="imgll imgfll">
-                            <a href="/thread-{{$brandNew->id}}.html" target="_blank"><span class="ImgBox"><img src="env('IMG_URL')}}/{{$brandNew->thumbPic}}"></span>
+                            <a href="/thread-{{$brandNew->id}}.html" target="_blank"><span class="ImgBox"><img src="{{env('IMG_URL')}}/{{$brandNew->thumbPic}}"></span>
                                 <p>{{$brandNew->title}}</p>
                             </a>
                         </div>
@@ -260,7 +260,7 @@
                 @foreach($studyNews as $styKey => $studyNew)
                     @if($styKey > 6)
                         <div class="img">
-                            <div class="imgfl"><a href="/thread-{{$studyNew->id}}.html" target="_blank"><span style="position:relative"><span class="ImgBox"><img src="env('IMG_URL')}}/{{$studyNew->thumbPic}}"></span></a> </div>
+                            <div class="imgfl"><a href="/thread-{{$studyNew->id}}.html" target="_blank"><span style="position:relative"><span class="ImgBox"><img src="{{env('IMG_URL')}}/{{$studyNew->thumbPic}}"></span></a> </div>
                             <a href="">{{$studyNew->title}}</a>
                         </div>
                     @else
@@ -279,7 +279,7 @@
                     @if($effKey == 0)
                 <p class="imgstyle">
                     <a href="/thread-{{$effNew->id}}.html" target="_blank">
-                        <img src="env('IMG_URL')}}/{{$effNew->thumbPic}}" alt=" " width="130" height="90" border="0">
+                        <img src="{{env('IMG_URL')}}/{{$effNew->thumbPic}}" alt=" " width="130" height="90" border="0">
                     </a>{{$effNew->title}}<a href="/thread-{{$effNew->id}}.html">［阅读] </a>
                 </p>
                     @else
@@ -313,7 +313,7 @@
                 @foreach($imageNews as $imgKey => $imgNew)
                     <div class="focuspic pic{{$imgKey+1}}">
                         <a href="/thread-{{$imgNew->id}}.html">
-                            <p class="img"><span class="ImgBox"><img src="env('IMG_URL')}}/{{$imgNew->thumbPic}}"></span><em>{{$imgNew->title}}</em><i></i></p>
+                            <p class="img"><span class="ImgBox"><img src="{{env('IMG_URL')}}/{{$imgNew->thumbPic}}"></span><em>{{$imgNew->title}}</em><i></i></p>
                         </a>
                     </div>
                 @endforeach
