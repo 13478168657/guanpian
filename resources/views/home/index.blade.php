@@ -207,10 +207,6 @@
                         @foreach($brandNews as $brandKey => $brandNew)
                             @if($brandKey > 1)
                                 <li><a href="/thread-{{$brandNew->id}}.html">{{mb_substr($brandNew->title,0,20)}}</a></li>
-                            @else
-                            <?php
-                                break;
-                            ?>
                             @endif
                         @endforeach
                     </ul>
