@@ -17,14 +17,14 @@
         <div class="news-l">
             <div class="mainLeft">
                 <div class="BreadNav">
-                    <a href="/">首页</a>／<a href="/index2.html">马陆葡萄价格</a>
+                    <a href="/">首页</a>／<a href="/index2.html"></a>
                 </div>
                 <ul class="side_class4">
                     @foreach($articles as $article)
                     <li>
                         <div class="limg">
-                            <a href="/thread-75.html" target="_blank" >
-                                <img src="images/1530160679.972273559.jpeg" alt="{{$article->title}}"/>
+                            <a href="/thread-{{$article->id}}.html" target="_blank" >
+                                <img src="{{env('IMG_URL')}}/{{$article->thumbPic}}}}" alt="{{$article->title}}"/>
                             </a>
                         </div>
                         <div class="rtext">

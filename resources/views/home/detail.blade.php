@@ -10,7 +10,7 @@
         <div class="news-l">
             <div class="mainLeft">
                 <div class="BreadNav">
-                    <a href="/">首页</a>／<a href="/index{{$category->id}}.html" class="hover">{{$category->name}}</a>／<a href="/thread-{{$article->id}}.html">{{$article->title}}</a>
+                    <a href="/">首页</a>／<a href="/index{{$category->id}}.html" class="hover"></a>／<a href="/thread-{{$article->id}}.html">{{$article->title}}</a>
                 </div>
                 <h1>{{$article->title}}</h1>
                 <div class="font2 adimg">
