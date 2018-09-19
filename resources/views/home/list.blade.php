@@ -24,7 +24,7 @@
                     <li>
                         <div class="limg">
                             <a href="/thread-{{$article->id}}.html" target="_blank" >
-                                <img src="{{env('IMG_URL')}}/{{$article->thumbPic}}}}" alt="{{$article->title}}"/>
+                                <img src="{{env('IMG_URL')}}/{{$article->thumbPic}}" alt="{{$article->title}}"/>
                             </a>
                         </div>
                         <div class="rtext">
