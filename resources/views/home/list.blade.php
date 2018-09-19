@@ -31,8 +31,7 @@
                         <div class="rtext">
                             <div class="side3_title"><a href="/thread-{{$article->id}}.html" target="_blank" >{{$article->title}}
                                 </a></div>
-                            <div class="side2_title"><a href="/thread-{{$article->id}}.html" target="_blank" >
-                                </a></div>
+                            <div class="side2_title"><a href="/thread-{{$article->id}}.html" target="_blank" >{{(mb_strlen($article->meta_description)>=130)?mb_substr($article->meta_description,0,130).'...':$article->meta_description}}</a></div>
                             <div class="side3_redu">{{$article->visit_num}}</div>
                         </div>
                         <div style="clear:both"></div>
