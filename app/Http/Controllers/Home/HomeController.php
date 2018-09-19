@@ -22,6 +22,7 @@ class HomeController extends Controller
         $data['currentNews'] = Article::where('status',3)->orderBy('id','desc')->take(7)->get();
         $data['knowNews'] = Article::where('category_id',9)->where('status',3)->OrderBy('id','desc')->take(6)->get();
         $data['priceNews'] = Article::where('category_id',1)->where('status',3)->OrderBy('id','desc')->take(9)->get();
+//        dd($data['priceNews']);
         $data['fillNews'] = Article::where('category_id',2)->where('status',3)->OrderBy('id','desc')->take(9)->get();
         $data['brandNews'] = Article::where('category_id',12)->where('status',3)->OrderBy('id','desc')->take(5)->get();
         $data['studyNews'] = Article::where('category_id',13)->where('status',3)->OrderBy('id','desc')->take(6)->get();

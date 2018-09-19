@@ -132,11 +132,6 @@
                     @foreach($priceNews as $pKey => $pNew)
                         @if($pKey >=1 && $pKey <=6)
                             <a href="/thread-{{$pNew->id}}.html" title="" target="_blank">{{mb_substr($pNew->title,0,9)}}</a>
-                        @else
-                            <?php
-                                break;
-                            ?>
-                        @endif
                     @endforeach
                     <div class="clear"></div>
                 </h3>
@@ -181,10 +176,6 @@
                     @foreach($fillNews as $fillKey => $fillNew)
                         @if($fillKey > 0)
                     <li><a href="/thread-{{$fillNew->id}}.html">{{mb_substr($fillNew->title,0,16)}}</a></li>
-                        @else
-                            <?php
-                                break;
-                            ?>
                         @endif
                     @endforeach
                 </ul>
