@@ -167,7 +167,7 @@
                 <h3><a href=""><span class="rmicon"></span>瓜片冲泡方法</a></h3>
                 @foreach($fillNews as $fillKey => $fillNew)
                     @if($fillKey == 0)
-                <p class="imgstyle"><a href="/thread-{{$fillNew->id}}.html" target="_blank"><img src="env('IMG_URL')}}/{{$fillNew->thumbPic}}" alt="{{$fillNew->title}}" width="130" height="90" border="0"></a>{{$fillNew->title}}<a href="/thread-{{$fillNew->id}}.html">［阅读] </a>
+                <p class="imgstyle"><a href="/thread-{{$fillNew->id}}.html" target="_blank"><img src="{{env('IMG_URL')}}/{{$fillNew->thumbPic}}" alt="{{$fillNew->title}}" width="130" height="90" border="0"></a>{{$fillNew->title}}<a href="/thread-{{$fillNew->id}}.html">［阅读] </a>
                     @else
                         <?php
                             break;
