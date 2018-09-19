@@ -27,14 +27,14 @@
         <div class="content-m">
             <div class="news_text" id="ajbcxw">
                 @if($firstNews)
-                <h2 class="red"><a href="/thread-{{$firstNews->id}}.html" target="_blank">{{substr($firstNews->title,0,24)}}</a>
+                <h2 class="red"><a href="/thread-{{$firstNews->id}}.html" target="_blank">{{mb_substr($firstNews->title,0,20)}}</a>
                     <p>{{$firstNews->meta_description}}</p>
                 </h2>
                 @endif
                 @if($secondNews)
                 <h3>
                     @foreach($secondNews as $second)
-                    <a href="/thread-{{$second->id}}.html" title="{{$second->title}}" target="_blank">{{substr($second->title,0,24)}}</a>
+                    <a href="/thread-{{$second->id}}.html" title="{{$second->title}}" target="_blank">{{mb_substr($second->title,0,9)}}</a>
                     @endforeach
                     <div class="clear"></div>
                 </h3>
@@ -53,7 +53,7 @@
                                     </span>
                                 </a>
                             </div>
-                            <a href="thread-{{$third->id}}.html">{{substr($third->title,0,21)}}</a>
+                            <a href="thread-{{$third->id}}.html">{{mb_substr($third->title,0,14)}}</a>
                         </div>
                     @endforeach
                 @endif
@@ -67,7 +67,7 @@
                 <p class="imgstyle">
                     <a href="thread-{{$currNews->id}}.html" target="_blank">
                         <img src="{{env('IMG_URL')}}/{{$currNews->thumbPic}}" alt=" " width="130" height="90" border="0">
-                    </a>{{mb_substr($currNews->title,0,15)}} <a href="">{{mb_substr($currNews->title,0,15)}} </a>
+                    </a>{{mb_substr($currNews->title,0,16)}} <a href="">{{mb_substr($currNews->title,0,16)}} </a>
                 </p>
                 @else
                     <?php
@@ -78,7 +78,7 @@
                 <ul class="list14">
                     @foreach($currentNews as  $currKey => $currNews)
                        @if($currKey> 0)
-                    <li><a href="thread-{{$currNews->id}}.html">{{mb_substr($currNews->title,0,15)}}</a></li>
+                    <li><a href="thread-{{$currNews->id}}.html">{{mb_substr($currNews->title,0,16)}}</a></li>
                     @endif
                     @endforeach
                 </ul>
@@ -119,7 +119,7 @@
             <div class="news_text" id="ajbcxw">
                 @foreach($priceNews as $pKey => $pNew)
                 @if($pKey == 0)
-                <h2 class="red"><a href="/thread-{{$pNew->id}}.html" title="" target="_blank">{{$pNew->title}}</a>
+                <h2 class="red"><a href="/thread-{{$pNew->id}}.html" title="" target="_blank">{{mb_substr($pNew->title,0,20)}}</a>
                     <p>{{$pNew->meta_meta_description}}</p>
                 </h2>
                 @else
@@ -131,7 +131,7 @@
                 <h3>
                     @foreach($priceNews as $pKey => $pNew)
                         @if($pKey >=1 && $pKey <=6)
-                            <a href="/thread-{{$pNew->id}}.html" title="" target="_blank">{{mb_substr($pNew->title,0,10)}}</a>
+                            <a href="/thread-{{$pNew->id}}.html" title="" target="_blank">{{mb_substr($pNew->title,0,9)}}</a>
                         @else
                             <?php
                                 break;
@@ -154,7 +154,7 @@
                                     </span>
                                 </a>
                             </div>
-                            <a href="/thread-{{$pNew->id}}.html">{{$pNew->title}}</a>
+                            <a href="/thread-{{$pNew->id}}.html">{{mb_substr($pNew->title,0,14)}}</a>
                         </div>
                     @else
                         <?php
@@ -180,7 +180,7 @@
                 <ul class="list14">
                     @foreach($fillNews as $fillKey => $fillNew)
                         @if($fillKey > 0)
-                    <li><a href="/thread-{{$fillNew->id}}.html">{{$fillNew->title}}</a></li>
+                    <li><a href="/thread-{{$fillNew->id}}.html">{{mb_substr($fillNew->title,0,16)}}</a></li>
                         @else
                             <?php
                                 break;
@@ -205,7 +205,7 @@
                             @if($brandKey <= 1)
                         <div class="imgll imgfll">
                             <a href="/thread-{{$brandNew->id}}.html" target="_blank"><span class="ImgBox"><img src="{{env('IMG_URL')}}/{{$brandNew->thumbPic}}"></span>
-                                <p>{{$brandNew->title}}</p>
+                                <p>{{mb_substr($brandNew->title,0,10)}}</p>
                             </a>
                         </div>
                             @else
@@ -218,7 +218,7 @@
                     <ul class="text-left">
                         @foreach($brandNews as $brandKey => $brandNew)
                             @if($brandKey > 1)
-                                <li><a href="/thread-{{$brandNew->id}}.html">{{$brandNew->title}}</a></li>
+                                <li><a href="/thread-{{$brandNew->id}}.html">{{mb_substr($brandNew->title,0,20)}}</a></li>
                             @else
                             <?php
                                 break;
@@ -233,7 +233,7 @@
             <div class="news_text" id="ajbcxw">
                 @foreach($studyNews as $styKey => $studyNew)
                     @if($styKey == 0)
-                        <h2 class="red"><a href="/thread-{{$studyNew->id}}.html" title="{{$studyNew->title}}" target="_blank">{{$studyNew->title}}</a>
+                        <h2 class="red"><a href="/thread-{{$studyNew->id}}.html" title="{{$studyNew->title}}" target="_blank">{{mb_substr($studyNew->title,0,20)}}</a>
                         <p>{{$studyNew->meta_description}}</p>
                     @else
                         <?php
@@ -245,7 +245,7 @@
                 <h3>
                     @foreach($studyNews as $styKey => $studyNew)
                         @if($styKey >0 && $styKey <= 6)
-                            <a href="/thread-{{$studyNew->id}}.html" title="" target="_blank">{{$studyNew->title}}</a>
+                            <a href="/thread-{{$studyNew->id}}.html" title="" target="_blank">{{mb_substr($studyNew->title,0,9)}}</a>
                         @else
                             <?php
                                 break;
@@ -263,7 +263,7 @@
                     @if($styKey > 6)
                         <div class="img">
                             <div class="imgfl"><a href="/thread-{{$studyNew->id}}.html" target="_blank"><span style="position:relative"><span class="ImgBox"><img src="{{env('IMG_URL')}}/{{$studyNew->thumbPic}}"></span></a> </div>
-                            <a href="">{{$studyNew->title}}</a>
+                            <a href="">{{mb_substr($studyNew->title,0,14)}}</a>
                         </div>
                     @else
                         <?php
@@ -293,7 +293,7 @@
                 <ul class="list14">
                     @foreach($effectNews as $effKey => $effNew)
                         @if($effKey > 0)
-                            <li><a href="/thread-{{$effNew->id}}.html">{{$effNew->title}}</a></li>
+                            <li><a href="/thread-{{$effNew->id}}.html">{{mb_substr($effNew->title,0,16)}}</a></li>
                         @else
                             <?php
                             break;
@@ -315,7 +315,7 @@
                 @foreach($imageNews as $imgKey => $imgNew)
                     <div class="focuspic pic{{$imgKey+1}}">
                         <a href="/thread-{{$imgNew->id}}.html">
-                            <p class="img"><span class="ImgBox"><img src="{{env('IMG_URL')}}/{{$imgNew->thumbPic}}"></span><em>{{$imgNew->title}}</em><i></i></p>
+                            <p class="img"><span class="ImgBox"><img src="{{env('IMG_URL')}}/{{$imgNew->thumbPic}}"></span><em>{{mb_substr($imgNew->title,0,15)}}</em><i></i></p>
                         </a>
                     </div>
                 @endforeach
