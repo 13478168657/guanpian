@@ -49,6 +49,9 @@ class HomeController extends Controller
         $categories = Category::where('base_id',1)->where('id','!=',$category->id)->orderBy('number','desc')->limit(3)->get();
         $articles = Article::where('status',3)->where('category_id',$id)->orderBy('created_at','desc')->paginate($pageSize);
         $pageSize = PageUtil::getPage($page,$articles->total(),$pageSize,$id,'s');
+        if($id == 11){
+            return view('home.imgList',['category'=>$category,'categories'=>$categories,'articles'=>$articles,'pageSize'=>$pageSize,'page'=>$page]);
+        }
         return view('home.list',['category'=>$category,'categories'=>$categories,'articles'=>$articles,'pageSize'=>$pageSize,'page'=>$page]);
         return view('home.list');
     }
