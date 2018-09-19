@@ -2,8 +2,6 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>六安瓜片网是六安瓜片原产地官方网站，为宣传原产地的六安瓜片品牌、六安瓜片价格，服务茶农茶企</title>
-	<meta name="keywords" content="六安瓜片,六安瓜片价格,六安瓜片原产地,白茶文化,白茶种植,白茶历史">
 	@yield('title')
 	<link rel="stylesheet" href="/css/base.css">
 	<link rel="stylesheet" href="/css/index.css">
