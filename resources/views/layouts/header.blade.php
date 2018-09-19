@@ -8,17 +8,9 @@ $categories = Category::take(9)->orderBy('number','desc')->get();
 <div class="header-top">
     <div class="header-top-c w">
         <ul>
-            <li><a href="">六安瓜片网</a></li>
-            <span>|</span>
-            <li><a href="">六安瓜片网</a></li>
-            <span>|</span>
-            <li><a href="">六安瓜片网</a></li>
-            <span>|</span>
-            <li><a href="">六安瓜片网</a></li>
-            <span>|</span>
-            <li><a href="">六安瓜片网</a></li>
-            <span>|</span>
-            <li><a href="">六安瓜片网</a></li>
+            <li>
+                欢迎来到六安瓜片网，六安瓜片专业门户
+            </li>
         </ul>
     </div>
 </div>
