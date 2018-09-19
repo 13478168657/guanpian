@@ -67,7 +67,7 @@
                 <p class="imgstyle">
                     <a href="thread-{{$currNews->id}}.html" target="_blank">
                         <img src="{{env('IMG_URL')}}/{{$currNews->thumbPic}}" alt=" " width="130" height="90" border="0">
-                    </a>{{substr($currNews->title,0,24)}} <a href="">{{substr($currNews->title,0,24)}} </a>
+                    </a>{{mb_substr($currNews->title,0,15)}} <a href="">{{mb_substr($currNews->title,0,15)}} </a>
                 </p>
                 @else
                     <?php
@@ -78,7 +78,7 @@
                 <ul class="list14">
                     @foreach($currentNews as  $currKey => $currNews)
                        @if($currKey> 0)
-                    <li><a href="thread-{{$currNews->id}}.html">{{mb_substr($currNews->title,0,10)}}</a></li>
+                    <li><a href="thread-{{$currNews->id}}.html">{{mb_substr($currNews->title,0,15)}}</a></li>
                     @endif
                     @endforeach
                 </ul>
