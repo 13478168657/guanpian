@@ -28,9 +28,9 @@
                             </a>
                         </div>
                         <div class="rtext">
-                            <div class="side3_title"><a href="/thread-75.html" target="_blank" >{{$article->title}}
+                            <div class="side3_title"><a href="/thread-{{$article->id}}.html" target="_blank" >{{$article->title}}
                                 </a></div>
-                            <div class="side2_title"><a href="/thread-75.html" target="_blank" >
+                            <div class="side2_title"><a href="/thread-{{$article->id}}.html" target="_blank" >
                                 </a></div>
                             <div class="side3_redu">{{$article->visit_num}}</div>
                         </div>
