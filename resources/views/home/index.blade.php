@@ -1,8 +1,10 @@
 @extends('layouts.main')
 @section('title')
-    <title></title>
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
+    @if($baseConfig)
+        <title>{{$baseConfig->title}}-{{$baseConfig->name}}</title>
+        <meta name="keywords" content="{{$baseConfig->home_key_word}}" />
+        <meta name="description" content="{{$baseConfig->home_meta_description}}" />
+    @endif
 @endsection
 @section('css')
     <link rel="stylesheet" href="/css/lunbotu.css">
