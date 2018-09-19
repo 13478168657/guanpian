@@ -1,11 +1,12 @@
 @extends('layouts.main')
 @section('title')
-
-    <title></title>
-
-    <title></title>
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
+    @if($page>=2)
+        <title>{{$category->meta_title}}-六安瓜片网-第{{$page}}页</title>
+    @else
+        <title>{{$category->meta_title}}-六安瓜片网</title>
+    @endif
+    <meta name="keywords" content="{{$category->meta_keyword}}" />
+    <meta name="description" content="{{$category->meta_description}}" />
 @endsection
 @section('css')
     <link rel="stylesheet" href="/css/list.css">
@@ -17,7 +18,7 @@
         <div class="news-l">
             <div class="mainLeft">
                 <div class="BreadNav">
-                    <a href="/">首页</a>／<a href="/index2.html"></a>
+                    <a href="/">首页</a>／<a href="/index{{$category->id}}.html">{{$category->name}}
                 </div>
                 <ul class="side_class4">
                     @foreach($articles as $article)

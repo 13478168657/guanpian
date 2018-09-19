@@ -1,8 +1,8 @@
 @extends('layouts.main')
 @section('title')
-    <title></title>
-    <meta name="keywords" content="" />
-    <meta name="description" content=""/>
+    <title>{{$article->title}}-六安瓜片网</title>
+    <meta name="keywords" content="{{$article->meta_key_word}}" />
+    <meta name="description" content="{{$article->meta_description}}"/>
 @endsection
 @section('content')
     <link rel="stylesheet" href="/css/details.css">
@@ -10,7 +10,7 @@
         <div class="news-l">
             <div class="mainLeft">
                 <div class="BreadNav">
-                    <a href="/">首页</a>／<a href="/index{{$category->id}}.html" class="hover"></a>／<a href="/thread-{{$article->id}}.html">{{$article->title}}</a>
+                    <a href="/">首页</a>／<a href="/index{{$category->id}}.html" class="hover">{{$category->name}}</a>／<a href="/thread-{{$article->id}}.html">{{$article->title}}</a>
                 </div>
                 <h1>{{$article->title}}</h1>
                 <div class="font2 adimg">
