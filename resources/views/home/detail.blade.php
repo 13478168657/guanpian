@@ -38,36 +38,30 @@
             </div>
             <div class="yuedu-left clearfix">
                 <ul>
+                    @foreach($articles as $k => $art)
+                    @if($k < 5)
                     <li class="item clear active">
                         <span class="li_dot left">
                             <i></i>
                         </span>
-                        <a class="no_line left" href="/zzrq/qt/1243.html">虫草，不是所有体质都适合，这三种人要注意!</a>
+                        <a class="no_line left" href="/thread-{{$art->id}}.html">{{$art->title}}</a>
                     </li>
-                    <li class="item clear active">
+                    @endif
+                    @endforeach
+                </ul>
+            </div>
+            <div class="yuedu-right clearfix">
+                <ul>
+                    @foreach($articles as $k => $art)
+                        @if($k >= 5)
+                            <li class="item clear active">
                         <span class="li_dot left">
                             <i></i>
                         </span>
-                        <a class="no_line left" href="/zzrq/sz/1242.html">冬虫夏草怎么吃最好</a>
-                    </li>
-                    <li class="item clear active">
-                        <span class="li_dot left">
-                            <i></i>
-                        </span>
-                        <a class="no_line left" href="/dcxcjg/1240.html">下半年冬虫夏草价格上涨似乎成为必然</a>
-                    </li>
-                    <li class="item clear active">
-                        <span class="li_dot left">
-                            <i></i>
-                        </span>
-                        <a class="no_line left" href="/zzrq/qt/1237.html">冬春换季呼吸道疾病高发，吃冬虫夏草最有效!</a>
-                    </li>
-                    <li class="item clear active">
-                        <span class="li_dot left">
-                            <i></i>
-                        </span>
-                        <a class="no_line left" href="/zzrq/qt/1237.html">冬春换季呼吸道疾病高发，吃冬虫夏草最有效!</a>
-                    </li>
+                                <a class="no_line left" href="/thread-{{$art->id}}.html">{{$art->title}}</a>
+                            </li>
+                        @endif
+                    @endforeach
                 </ul>
             </div>
         </div>

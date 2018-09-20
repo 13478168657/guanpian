@@ -66,8 +66,9 @@ class HomeController extends Controller
         $category =  Category::where('id',$article->category_id)->first();
         $nextArticle = Article::where('id',$id+1)->first();
         $prevArticle = Article::where('id',$id-1)->first();
+        $articles = Article::where('category_id',$article->category_id)->take(10)->orderBy('id','desc')->get();
         $categories = Category::where('base_id',1)->where('id','!=',$article->category_id)->orderBy('number','desc')->take(3)->get();
-        return view('home.detail',['article'=>$article,'categories'=>$categories,'category'=>$category,'nextArticle'=>$nextArticle,'prevArticle'=>$prevArticle]);
+        return view('home.detail',['article'=>$article,'categories'=>$categories,'category'=>$category,'nextArticle'=>$nextArticle,'prevArticle'=>$prevArticle,'articles'=>$articles]);
         return view('home.detail');
     }
 
