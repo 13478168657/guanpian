@@ -48,7 +48,7 @@
                                 <a href="thread-{{$third->id}}.html" target="_blank">
                                     <span style="position:relative">
                                         <span class="ImgBox">
-                                            <img src="/images/2018319165139590.jpg">
+                                            <img src="{{env('IMG_URL')}}/{{$knew->thumbPic}}">
                                         </span>
                                     </span>
                                 </a>
