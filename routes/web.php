@@ -18,7 +18,9 @@ Route::get('consult','Consult\ConsultController@index');
 Route::get('instruction','Instruction\InstructionController@index');
 Route::get('notice','Notice\NoticeController@index');
 Route::get('payment','Payment\PaymentController@index');
-Route::get('about','About\AboutController@index');
+Route::get('/h/index','Home\HomeController@hindex');
+Route::get('/h/list','Home\HomeController@hlist');
+Route::get('/h/detail','Home\HomeController@hdetail');
 //Route::group(['middleware'=>['auth','checkUserPermission']],function(){
 //    Route::get('/', 'Article\ArticleController@index');
 //    Route::get('article/list', 'Article\ArticleController@index');
