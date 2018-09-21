@@ -64,7 +64,12 @@
                     @endforeach
                 </ul>
             </div>
+			      <div style="clear: both;"></div>
+               <div class="shengming ">
+                【版权及免责声明】凡注明"转载来源"的作品，均转载自其它媒体，转载目的在于传递更多的信息，并不代表本网赞同其观点和对其真实性负责。六安瓜片网倡导尊重与保护知识产权，如发现本站文章存在内容、版权或其它问题，烦请联系。 联系微信：18621791688，我们将及时沟通与处理。
+            </div>
         </div>
+		
         <div class="news-r">
             <div class="news-r-n">
                 @foreach($categories as $k=>$cat)

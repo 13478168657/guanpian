@@ -17,6 +17,7 @@
 			return Math.random()>.5 ? -1 : 1;
 		}
 	</script>
+	<meta name="baidu-site-verification" content="UIwf5p0taI" />
 </head>
 <body>
 @include('layouts.header')

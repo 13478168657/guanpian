@@ -35,28 +35,29 @@ $links = Link::orderBy('id','desc')->get();
                 <th width="560" valign="top">
                     <dl class="copyright clearfix">
                         <dt>主办单位</dt>
-                        <dd>六安县农业局<br>
-                            六安瓜片协会　六安县茶文化促进会
+                        <dd>上海徽尚电子商务有限公司<br>
+                            徽茶茶叶发展论坛
                         </dd>
                     </dl>
                     <dl class="copyright clearfix">
                         <dt>承建运营</dt>
-                        <dd>六安县安信信息有限公司</dd>
+                        <dd>上海徽尚电子商务有限公司</dd>
                         <dd>六安瓜片产业服务部</dd>
-                        <dd>联系人：李庭裕 13967247869</dd>
+                        <dd>联系人：黄先生 18621791688</dd>
                     </dl>
-                    <dl class="copyright clearfix">
+                   <!--
+				    <dl class="copyright clearfix">
                         <dt>茶园证补办</dt>
                         <dd>地址：六安县六安城北科技创业园5号楼4层408办公室</dd>
                         <dd>电话：0572-5223705</dd>
                     </dl>
+				   -->
                 </th>
                 <td class="table_co" valign="top"><h5>联系我们</h5>
-                    <p>浙江省六安县六安城北科技创业园5号楼4层</p>
-                    <p>服务热线：0572-5223705</p>
-                    <p>合作电话：0572-5220701</p>
-                    <p>手机：13967247869</p>
-                    <p>QQ：153009741</p></td>
+                    <p>安徽省六安市高铁站二楼</p>
+                    <p>服务热线：4008-111-517</p>
+                    <p>手机：18621791688</p>
+                    <p>QQ：369782511</p></td>
             </tr>
             </tbody>
         </table>

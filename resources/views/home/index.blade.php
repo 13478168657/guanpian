@@ -61,36 +61,29 @@
         </div>
         <div class="content-r">
             <div class="box mb25" id="rmw_fangtan">
-                <h3><a href=""><span class="rmicon"></span>新闻排行</a></h3>
-                @foreach($currentNews as  $currKey => $currNews)
-                @if($currKey == 0)
-                <p class="imgstyle">
-                    <a href="thread-{{$currNews->id}}.html" target="_blank">
-                        <img src="{{env('IMG_URL')}}/{{$currNews->thumbPic}}" alt=" " width="130" height="90" border="0">
-                    </a>{{mb_substr($currNews->title,0,16)}} <a href="">{{mb_substr($currNews->title,0,16)}} </a>
-                </p>
-                @else
-                    <?php
-                        break;
-                    ?>
-                @endif
-                @endforeach
-                <ul class="list14">
-                    @foreach($currentNews as  $currKey => $currNews)
-                       @if($currKey> 0)
-                    <li><a href="thread-{{$currNews->id}}.html">{{mb_substr($currNews->title,0,16)}}</a></li>
-                    @endif
-                    @endforeach
+			
+			<h3><a href=""><span class="rmicon"></span>茶乡视频</a></h3>
+				<embed src='http://player.youku.com/player.php/sid/XMzgxNzg2NTUzNg==/v.swf' allowFullScreen='true' quality='high' width='268' height='200' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>
+				<br/><br/>
+                <h3><a href=""><span class="rmicon"></span>平台公告</a></h3>
+              
+                <ul class="list14"> 
+                    <li><a href="#">平台公告平台公告告平台公告</a></li>
+                   <li><a href="#">平台公告平台公告告平台公告</a></li>
+				   <li><a href="#">平台公告平台公告告平台公告</a></li>
                 </ul>
+				<br/><br/>
+				
             </div>
         </div>
+		
     </div>
     <div class="contentq w  clearfix">
         <div class="contentq-l">
             <div class="example">
                 <div class="ft-carousel" id="carousel_1">
                     <ul class="carousel-inner left-inner clearfix">
-                        <li><a href="">茶叶鉴别</a></li>
+                        <li><a href="">瓜片鉴别</a></li>
                     </ul>
                     <ul class="news_img_xiao clearfix">
                         @foreach($knowNews as $knKey => $knew)
@@ -186,7 +179,7 @@
             <div class="example">
                 <div class="ft-carousel" id="carousel_1">
                     <ul class="carousel-inner left-inner clearfix">
-                        <li><a href="">瓜片品牌</a></li>
+                        <li><a href="">徽茶</a></li>
                     </ul>
                     <ul class="news_img_xiao clearfix">
                         @foreach($brandNews as $brandKey => $brandNew)
