@@ -29,6 +29,7 @@ class HomeController extends Controller
         $data['effectNews'] = Article::where('category_id',4)->where('status',3)->OrderBy('id','desc')->take(5)->get();
         $data['imageNews'] = Article::where('category_id',11)->where('status',3)->OrderBy('id','desc')->take(10)->get();
         $data['lunbo'] = Advertisement::where('position_id',4)->get();
+        $data['publicNews'] = Article::where('category_id',14)->where('status',3)->orderBy('id','desc')->take(3)->get();
         $baseConfig = BaseConfig::first();
         $data['baseConfig'] = $baseConfig;
         return view('home.index',$data);

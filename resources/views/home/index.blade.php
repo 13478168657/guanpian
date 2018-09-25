@@ -53,7 +53,7 @@
                                     </span>
                                 </a>
                             </div>
-                            <a href="thread-{{$third->id}}.html">{{mb_substr($third->title,0,14)}}</a>
+                            <a href="/thread-{{$third->id}}.html">{{mb_substr($third->title,0,14)}}</a>
                         </div>
                     @endforeach
                 @endif
@@ -67,10 +67,10 @@
 				<br/><br/>
                 <h3><a href=""><span class="rmicon"></span>平台公告</a></h3>
               
-                <ul class="list14"> 
-                    <li><a href="#">平台公告平台公告告平台公告</a></li>
-                   <li><a href="#">平台公告平台公告告平台公告</a></li>
-				   <li><a href="#">平台公告平台公告告平台公告</a></li>
+                <ul class="list14">
+                    @foreach($publicNews as $publicNew)
+                    <li><a href="/thread-{{$publicNew->id}}.html">{{mb_substr($publicNew->title,0,14)}}</a></li>
+                    @endforeach
                 </ul>
 				<br/><br/>
 				
