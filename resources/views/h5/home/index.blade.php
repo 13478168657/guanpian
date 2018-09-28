@@ -123,7 +123,7 @@
             <ul>
                 @foreach($imageNews as $ki => $image)
                 @if($ki >1 && $ki <=3)
-                <li><a class="pic" href=""><img _src="env('IMG_URL')}}/{{$image->thumbPic}}" alt="{{$image->title}}" src="env('IMG_URL')}}/{{$image->thumbPic}}" /></a>
+                <li><a class="pic" href=""><img _src="{{env('IMG_URL')}}/{{$image->thumbPic}}" alt="{{$image->title}}" src="{{env('IMG_URL')}}/{{$image->thumbPic}}" /></a>
                     <p>{{$image->title}}</p>
                 </li>
                 @endif
@@ -132,7 +132,7 @@
             <ul>
                 @foreach($imageNews as $ki => $image)
                     @if($ki >3)
-                        <li><a class="pic" href=""><img _src="env('IMG_URL')}}/{{$image->thumbPic}}" alt="{{$image->title}}" src="env('IMG_URL')}}/{{$image->thumbPic}}" /></a>
+                        <li><a class="pic" href=""><img _src="{{env('IMG_URL')}}/{{$image->thumbPic}}" alt="{{$image->title}}" src="{{env('IMG_URL')}}/{{$image->thumbPic}}" /></a>
                             <p>{{$image->title}}</p>
                         </li>
                     @endif
