@@ -131,9 +131,9 @@ class HomeController extends Controller
         $articles = Article::where('status',3)->where('category_id',$id)->orderBy('created_at','desc')->paginate($pageSize);
         $pageSize = PageUtil::gethPage($page,$articles->total(),$pageSize,$id,'s');
 
-        if($id == 11){
-            return view('home.imgList',['category'=>$category,'categories'=>$categories,'articles'=>$articles,'pageSize'=>$pageSize,'page'=>$page]);
-        }
+//        if($id == 11){
+//            return view('home.imgList',['category'=>$category,'categories'=>$categories,'articles'=>$articles,'pageSize'=>$pageSize,'page'=>$page]);
+//        }
         return view('h5.home.list',['category'=>$category,'categories'=>$categories,'articles'=>$articles,'pageSize'=>$pageSize,'page'=>$page]);
     }
 
