@@ -1,8 +1,12 @@
 @extends('h5.layouts.main')
 @section('title')
-    <title></title>
-    <meta name="keywords" content="">
-    <meta name="description" content="">
+    @if($page>=2)
+        <title>{{$category->meta_title}}-六安瓜片网-第{{$page}}页</title>
+    @else
+        <title>{{$category->meta_title}}-六安瓜片网</title>
+    @endif
+    <meta name="keywords" content="{{$category->meta_keyword}}" />
+    <meta name="description" content="{{$category->meta_description}}" />
 @endsection
 @section('content')
     <div class="content_top">
