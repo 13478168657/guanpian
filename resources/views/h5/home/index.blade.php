@@ -6,7 +6,7 @@
 @endsection
 @section('content')
     <div class="content_top">
-        <div class="arrowl"><a href=""><img src="/h5/images/home.png" alt="首页" height="22"></a></div>
+        <div class="arrowl"><a href="/h/index"><img src="/h5/images/home.png" alt="首页" height="22"></a></div>
         <div class="context">六安瓜片网</div>
         <div class="arrowr"><a href="#" class="more" id="dhmore"><img src="/h5/images/more.png" height="23"></a></div>
     </div>
