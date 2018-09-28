@@ -7,7 +7,7 @@
 @section('content')
     <div class="content_top">
         <div class="arrowl"><a href=""><img src="/h5/images/home.png" alt="首页" height="22"></a></div>
-        <div class="context">雄安热线</div>
+        <div class="context">{{$category->alias}}</div>
         <div class="arrowr"><a href="/h/index" class="more" id="dhmore"><img src="/h5/images/more.png" height="23"></a></div>
     </div>
     <div class="cnsnav">
