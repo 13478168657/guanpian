@@ -49,7 +49,7 @@
     @foreach($news as $k => $new)
         @if($k == 0)
     <h3 class="headNew"><a href="/h/thread-{{$new->id}}.html" title="{{$new->title}}">{{$new->title}}</a></h3>
-    <h5 class="subNew">{{$new->meta_description}}<a href="/h/index6.html">[更多]</a></h5>
+    <h5 class="subNew">{{mb_substr($new->meta_description,0,32)}}...<a href="/h/index6.html">[更多]</a></h5>
         @else
                 @break;
         @endif
