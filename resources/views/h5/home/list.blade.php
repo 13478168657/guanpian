@@ -57,7 +57,6 @@
         <?php
         echo htmlspecialchars_decode($pageSize);
         ?>
-        </ul>
     </div>
     <!-- 效果导航 -->
     <div class="effectNav">
