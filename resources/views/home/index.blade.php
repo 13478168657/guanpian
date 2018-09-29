@@ -226,8 +226,6 @@
                         @endif
                     @endforeach
 
-
-
                     <div class="clear"></div>
                 </h3>
             </div>
