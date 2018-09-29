@@ -13,7 +13,7 @@
 Route::group(['domain' => '{account}.guapian.cn'], function () {
 //    dd($_SERVER['REQUEST_URI']);
     Route::get('/', function ($account) {
-        dd($account);
+//        dd($account);
         $home = new App\Http\Controllers\Home\HomeController();
         if($account == 'm'){
             return $home->hindex();
