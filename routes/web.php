@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::group(['domain' => '{account}.gp.com'], function () {
+Route::group(['domain' => '{account}.guapian.cn'], function () {
 //    dd($_SERVER['REQUEST_URI']);
     Route::get('/', function ($account) {
         $home = new App\Http\Controllers\Home\HomeController();
