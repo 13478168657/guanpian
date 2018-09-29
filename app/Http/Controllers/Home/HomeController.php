@@ -116,7 +116,7 @@ class HomeController extends Controller
     }
 
     public function hlist($id){
-        $position = strpos($id, 's');;
+        $position = strpos($id, 's');
 
         if($position < 0 || $position === false){
             $id = $id;

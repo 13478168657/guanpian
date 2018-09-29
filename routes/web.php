@@ -25,7 +25,7 @@ Route::group(['domain' => '{account}.guapian.cn'], function () {
 //    dd(3);
     Route::get('/index{id}.html', function ($account,$id) {
 //        dd($account);
-        dd(1);
+//        dd(1);
         $home = new App\Http\Controllers\Home\HomeController();
         if($account == 'm'){
             return $home->hlist($id);
