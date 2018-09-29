@@ -13,6 +13,7 @@
 Route::group(['domain' => '{account}.guapian.cn'], function () {
 //    dd($_SERVER['REQUEST_URI']);
     Route::get('/', function ($account) {
+        dd($account);
         $home = new App\Http\Controllers\Home\HomeController();
         if($account == 'm'){
             return $home->hindex();
@@ -22,17 +23,18 @@ Route::group(['domain' => '{account}.guapian.cn'], function () {
         }
     });
 //    dd(3);
-    Route::get('index{id}.html', function ($account,$id) {
+    Route::get('/index{id}.html', function ($account,$id) {
 //        dd($account);
+        dd(1);
         $home = new App\Http\Controllers\Home\HomeController();
         if($account == 'm'){
             return $home->hlist($id);
 //            return view('h5.home.index');
         }else{
-            return $home->list($id);
+            return $home->lists($id);
         }
     });
-    Route::get('thread-{id}.html', function ($account,$id) {
+    Route::get('/thread-{id}.html', function ($account,$id) {
         $home = new App\Http\Controllers\Home\HomeController();
         if($account == 'm'){
             return $home->hdetail($id);
