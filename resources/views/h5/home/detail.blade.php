@@ -79,7 +79,7 @@
     <!-- 效果导航 -->
     <div class="effectNav">
         <h3><a href="/">首页</a>&#160;&#160;&#160;|&#160;&#160;&#160;<a href="/h/index" >帮助</a></h3>
-        <p>首页 | 资讯 | 关注 | 科技 | 财经 | 汽车 | 房产 | 图片 | 视频 | 全国</p>
+        <p>首页 | 资讯 | 价格 | 功效 | 种植 | 冲泡 | 图片 | 品牌</p>
         <p></p>
     </div>
     <div id="goTopBtn"><img src="/h5/images/top.png" width="30"></div>

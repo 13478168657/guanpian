@@ -239,7 +239,7 @@
     <!-- 效果导航 -->
     <div class="effectNav">
         <h3><a href="/">首页</a>&#160;&#160;&#160;|&#160;&#160;&#160;<a href="list.php?tid=60" >帮助</a></h3>
-        <p>首页 | 资讯 | 价格 | 功效 | 种植 | 冲泡</p>
+        <p>首页 | 资讯 | 价格 | 功效 | 种植 | 冲泡 | 图片 | 品牌</p>
         <p></p>
     </div>
     <div id="goTopBtn"><img src="/h5/images/top.png" width="30"></div>
