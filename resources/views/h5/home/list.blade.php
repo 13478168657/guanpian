@@ -12,27 +12,27 @@
     <div class="content_top">
         <div class="arrowl"><a href=""><img src="/h5/images/home.png" alt="首页" height="22"></a></div>
         <div class="context">{{$category->alias}}</div>
-        <div class="arrowr"><a href="/h/index" class="more" id="dhmore"><img src="/h5/images/more.png" height="23"></a></div>
+        <div class="arrowr"><a href="/" class="more" id="dhmore"><img src="/h5/images/more.png" height="23"></a></div>
     </div>
     <div class="cnsnav">
         <div class="navlayer" id="navlayer">
             <div class="cnsnav">
                 <ul id="">
-                    <li class="selimg"><a href="/h/index">首页</a></li>
+                    <li class="selimg"><a href="/">首页</a></li>
 
-                    <li><a href="/h/index6.html">资讯</a></li>
+                    <li><a href="/index6.html">资讯</a></li>
 
-                    <li><a href="/h/index1.html">价格</a></li>
+                    <li><a href="/index1.html">价格</a></li>
 
-                    <li><a href="/h/index4.html">功效</a></li>
+                    <li><a href="/index4.html">功效</a></li>
 
-                    <li><a href="/h/index10.html">种植</a></li>
+                    <li><a href="/index10.html">种植</a></li>
 
-                    <li><a href="/h/index2.html">冲泡</a></li>
+                    <li><a href="/index2.html">冲泡</a></li>
 
-                    <li><a href="/h/index11.html">图片</a></li>
+                    <li><a href="/index11.html">图片</a></li>
 
-                    <li><a href="/h/index12.html">品牌</a></li>
+                    <li><a href="/index12.html">品牌</a></li>
 
                 </ul>
             </div>
@@ -41,12 +41,12 @@
     <!-- 元素开始 -->
     <div id="tabBox2" class="tabBox">
         <div class="hd">
-            <h2>当前位置：<a href='/h/index'>六安瓜片</a> > <a href='/h/index{{$category->id}}.html'>{{$category->alias}}</a>
+            <h2>当前位置：<a href='/'>六安瓜片</a> > <a href='/index{{$category->id}}.html'>{{$category->alias}}</a></h2>
         </div>
         <div class="news_list">
             @foreach($articles as $article)
             <div class='news_item'><img src="{{env('IMG_URL')}}/{{$article->thumbPic}}" alt="{{$article->title}}" class='avator75'>
-                <div class='news_detail cursor'><a href='/h/thread-{{$article->id}}.html'><span>{{$article->title}}</span></a>
+                <div class='news_detail cursor'><a href='/thread-{{$article->id}}.html'><span>{{$article->title}}</span></a>
                     <p>{{$article->meta_description}}</p>
                 </div>
             </div>

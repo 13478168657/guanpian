@@ -6,29 +6,29 @@
 @endsection
 @section('content')
     <div class="content_top">
-        <div class="arrowl"><a href="/h/index{{$category->id}}.html"><img src="/h5/images/arrow_l.png" alt="返回栏目" height="22"></a></div>
-        <div class="context"><a href="/h/index">首页</a> &#8226; <a href="/h/index{{$category->id}}.html">{{$category->alias}}</a> &#8226; 正文</div>
+        <div class="arrowl"><a href="/index{{$category->id}}.html"><img src="/h5/images/arrow_l.png" alt="返回栏目" height="22"></a></div>
+        <div class="context"><a href="/">首页</a> &#8226; <a href="/index{{$category->id}}.html">{{$category->alias}}</a> &#8226; 正文</div>
         <div class="arrowr"><a href="#" class="more" id="dhmore"><img src="/h5/images/more_1.png" height="23"></a></div>
     </div>
     <div class="cnsnav">
         <div class="navlayer" id="navlayer">
             <div class="cnsnav">
                 <ul id="">
-                    <li class="selimg"><a href="/h/index">首页</a></li>
+                    <li class="selimg"><a href="/">首页</a></li>
 
-                    <li><a href="/h/index6.html">资讯</a></li>
+                    <li><a href="/index6.html">资讯</a></li>
 
-                    <li><a href="/h/index1.html">价格</a></li>
+                    <li><a href="/index1.html">价格</a></li>
 
-                    <li><a href="/h/index4.html">功效</a></li>
+                    <li><a href="/index4.html">功效</a></li>
 
-                    <li><a href="/h/index10.html">种植</a></li>
+                    <li><a href="/index10.html">种植</a></li>
 
-                    <li><a href="/h/index2.html">冲泡</a></li>
+                    <li><a href="/index2.html">冲泡</a></li>
 
-                    <li><a href="/h/index11.html">图片</a></li>
+                    <li><a href="/index11.html">图片</a></li>
 
-                    <li><a href="/h/index12.html">品牌</a></li>
+                    <li><a href="/index12.html">品牌</a></li>
 
                 </ul>
             </div>
@@ -62,13 +62,13 @@
             <div class="con">
                 <ul>
                     @foreach($articles as $article)
-                    <li><a href="/h/thread-{{$article->id}}.html" title="{{$article->title}}">{{$article->title}}</a></li>
+                    <li><a href="/thread-{{$article->id}}.html" title="{{$article->title}}">{{$article->title}}</a></li>
                     @endforeach
                 </ul>
             </div>
         </div>
     </div>
-    <a class="readMore" href="/h/index{{$category->id}}.html">返回栏目&gt;&gt;</a>
+    <a class="readMore" href="/index{{$category->id}}.html">返回栏目&gt;&gt;</a>
     <div class="clear"></div>
     <div id="SOHUCS"></div>
     <script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="/h5/js/changyan_mobile.js">

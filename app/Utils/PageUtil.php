@@ -73,16 +73,16 @@ class PageUtil{
         if($totalPage <=1){
             return $html = "<span class='pagination-curr'>首页</span>";
         }
-        $html .= "<a href='/h/index{$id}{$type}1.html'>首页</a>";
+        $html .= "<a href='/index{$id}{$type}1.html'>首页</a>";
         if($currentPage >= 2){
             $prePage = $currentPage-1;
-            $html .= "<a href='/h/index{$id}{$type}{$prePage}.html'>上一页</a>";
+            $html .= "<a href='/index{$id}{$type}{$prePage}.html'>上一页</a>";
         }
         $nextPage = $currentPage+1;
         if($currentPage+1 <= $totalPage){
-            $html .= "<a href='/h/index{$id}{$type}{$nextPage}.html' class='pagination-next'>下一页</a>";
+            $html .= "<a href='/index{$id}{$type}{$nextPage}.html' class='pagination-next'>下一页</a>";
         }
-        $html .= "<a href='/h/index{$id}{$type}{$totalPage}.html' class='pagination-last' title='尾页'>尾页</a>";
+        $html .= "<a href='/index{$id}{$type}{$totalPage}.html' class='pagination-last' title='尾页'>尾页</a>";
 
         return $html;
         // <span class="pagination-curr">1</span>

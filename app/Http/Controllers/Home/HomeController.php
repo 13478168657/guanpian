@@ -15,10 +15,10 @@ use App\Utils\PageUtil;
 class HomeController extends Controller
 {
 
-    public function index(Request $reques){
-        if($this->isMobile()){
-            return redirect('/h/index');
-        }
+    public function index(){
+//        if($this->isMobile()){
+//            return redirect('/h/index');
+//        }
         $data['secondNews'] = Article::where('category_id',6)->where('status',3)->OrderBy('id','desc')->take(12)->skip(1)->get();
         $data['firstNews'] = Article::where('category_id',6)->where('status',3)->OrderBy('id','desc')->first();
         $data['thirdNews'] = Article::where('category_id',6)->where('status',3)->OrderBy('id','desc')->take(2)->skip(13)->get();
@@ -39,25 +39,25 @@ class HomeController extends Controller
 
     }
 
-    public function lists(Request $request,$id){
+    public function lists($id){
         $position = strpos($id, 's');;
 
         if($position < 0 || $position === false){
             $id = $id;
             $page=1;
-            if($this->isMobile()){
-                return redirect('/h/index'.$id.'.html');
-            }
+//            if($this->isMobile()){
+//                return redirect('/h/index'.$id.'.html');
+//            }
         }else{
             $info = $id;
             $id = substr($info, 0,strpos($info, 's'));
             $page = substr($info,strpos($info, 's')+1);
-            if($this->isMobile()){
-                return redirect('/h/index'.$id.'s'.$page.'.html');
-            }
+//            if($this->isMobile()){
+//                return redirect('/h/index'.$id.'s'.$page.'.html');
+//            }
         }
 
-        $request->page = $page;
+//        $request->page = $page;
         $pageSize = 10;
         $category =  Category::where('id',$id)->first();
         $categories = Category::where('base_id',1)->where('id','!=',$category->id)->orderBy('number','desc')->limit(3)->get();
@@ -70,10 +70,10 @@ class HomeController extends Controller
         return view('home.list');
     }
 
-    public function detail(Request $request,$id){
-        if($this->isMobile()){
-            return redirect('/h/thread-'.$id.'.html');
-        }
+    public function detail($id){
+//        if($this->isMobile()){
+//            return redirect('/h/thread-'.$id.'.html');
+//        }
         $article = Article::where('id',$id)->first();
         $article->visit_num = $article->visit_num+1;
 
@@ -87,7 +87,7 @@ class HomeController extends Controller
         return view('home.detail');
     }
 
-    public function goodsDetail(Request $request,$id){
+    public function goodsDetail($id){
         $goods = Goods::where('id',$id)->where('status',3)->first();
         $goods->visit_num = $goods->visit_num+1;
         $goods->save();
@@ -98,7 +98,7 @@ class HomeController extends Controller
         return view('home.goodsDetail',['goods'=>$goods,'categories'=>$categories,'category'=>$category,'nextGoods'=>$nextGoods,'prevGoods'=>$prevGoods]);
     }
 
-    public function hindex(Request $request){
+    public function hindex(){
 
         $data['news'] = Article::where('category_id',6)->where('status',3)->OrderBy('id','desc')->take(7)->get();
         $data['knowNews'] = Article::where('category_id',9)->where('status',3)->OrderBy('id','desc')->take(7)->get();
@@ -115,7 +115,7 @@ class HomeController extends Controller
         return view('h5.home.index',$data);
     }
 
-    public function hlist(Request $request,$id){
+    public function hlist($id){
         $position = strpos($id, 's');;
 
         if($position < 0 || $position === false){
@@ -126,7 +126,7 @@ class HomeController extends Controller
             $id = substr($info, 0,strpos($info, 's'));
             $page = substr($info,strpos($info, 's')+1);
         }
-        $request->page = $page;
+//        $request->page = $page;
         $pageSize = 8;
         $category =  Category::where('id',$id)->first();
         $categories = Category::where('base_id',1)->where('id','!=',$category->id)->orderBy('number','desc')->limit(3)->get();
@@ -139,7 +139,7 @@ class HomeController extends Controller
         return view('h5.home.list',['category'=>$category,'categories'=>$categories,'articles'=>$articles,'pageSize'=>$pageSize,'page'=>$page]);
     }
 
-    public function hdetail(Request $request,$id){
+    public function hdetail($id){
 
         $article = Article::where('id',$id)->first();
         $article->visit_num = $article->visit_num+1;

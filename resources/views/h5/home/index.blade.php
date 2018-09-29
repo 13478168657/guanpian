@@ -8,7 +8,7 @@
 @endsection
 @section('content')
     <div class="content_top">
-        <div class="arrowl"><a href="/h/index"><img src="/h5/images/home.png" alt="首页" height="22"></a></div>
+        <div class="arrowl"><a href="/index"><img src="/h5/images/home.png" alt="首页" height="22"></a></div>
         <div class="context">六安瓜片网</div>
         <div class="arrowr"><a href="#" class="more" id="dhmore"><img src="/h5/images/more.png" height="23"></a></div>
     </div>
@@ -16,21 +16,21 @@
         <div class="navlayer" id="navlayer">
             <div class="cnsnav">
                 <ul id="">
-                    <li class="selimg"><a href="/h/index">首页</a></li>
+                    <li class="selimg"><a href="/">首页</a></li>
 
-                    <li><a href="/h/index6.html">资讯</a></li>
+                    <li><a href="/index6.html">资讯</a></li>
 
-                    <li><a href="/h/index1.html">价格</a></li>
+                    <li><a href="/index1.html">价格</a></li>
 
-                    <li><a href="/h/index4.html">功效</a></li>
+                    <li><a href="/index4.html">功效</a></li>
 
-                    <li><a href="/h/index10.html">种植</a></li>
+                    <li><a href="/index10.html">种植</a></li>
 
-                    <li><a href="/h/index2.html">冲泡</a></li>
+                    <li><a href="/index2.html">冲泡</a></li>
 
-                    <li><a href="/h/index11.html">图片</a></li>
+                    <li><a href="/index11.html">图片</a></li>
 
-                    <li><a href="/h/index12.html">品牌</a></li>
+                    <li><a href="/index12.html">品牌</a></li>
 
                 </ul>
             </div>
@@ -38,20 +38,20 @@
     </div>
     <header>
         <nav>
-            <a target="_blank" href="/h/index">首页</a>
-            <a href="/h/index6.html" >资讯</a>
-            <a href="/h/index1.html" >价格</a>
-            <a href="/h/index4.html" >功效</a>
-            <a href="/h/index10.html" >种植</a>
-            <a href="/h/index2.html" >冲泡</a>
-            <a href="/h/index11.html" >图片</a>
-            <a href="/h/index12.html" >品牌</a>
+            <a target="_blank" href="/">首页</a>
+            <a href="/index6.html" >资讯</a>
+            <a href="/index1.html" >价格</a>
+            <a href="/index4.html" >功效</a>
+            <a href="/index10.html" >种植</a>
+            <a href="/index2.html" >冲泡</a>
+            <a href="/index11.html" >图片</a>
+            <a href="/index12.html" >品牌</a>
         </nav>
     </header>
     @foreach($news as $k => $new)
         @if($k == 0)
-    <h3 class="headNew"><a href="/h/thread-{{$new->id}}.html" title="{{$new->title}}">{{$new->title}}</a></h3>
-    <h5 class="subNew">{{mb_substr($new->meta_description,0,32)}}...<a href="/h/index6.html">[更多]</a></h5>
+    <h3 class="headNew"><a href="/thread-{{$new->id}}.html" title="{{$new->title}}">{{$new->title}}</a></h3>
+    <h5 class="subNew">{{mb_substr($new->meta_description,0,32)}}...<a href="/index6.html">[更多]</a></h5>
         @else
                 @break;
         @endif
@@ -62,7 +62,7 @@
         <div id="slider" class="swipe">
             <div class="swipe-wrap swiper-wrapper">
                 @foreach($imageNews as $img)
-                <div class="image swiper-slide" style="background:url({{env('IMG_URL')}}/{{$img->thumbPic}}) center no-repeat;background-size: cover;"> <a href="view.php?aid=2023" target="_blank"></a>
+                <div class="image swiper-slide" style="background:url({{env('IMG_URL')}}/{{$img->thumbPic}}) center no-repeat;background-size: cover;"> <a href="/thread-{{$img->id}}.html" target="_blank"></a>
                     <div class="title">
                         <p>{{$img->title}}</p>
                     </div>
@@ -76,7 +76,7 @@
     <!-- Tab切换（高度自适应示范） -->
     <div id="tabBox1" class="tabBox">
         <div class="hd">
-            <h3><a href="/h/index6.html" >资讯</a><span>News</span></h3>
+            <h3><a href="/index6.html" >资讯</a><span>News</span></h3>
             <!--
                 <ul>
               <li><a href="javascript:void(0)">政企</a></li><li><a href="javascript:void(0)">专题</a></li>
@@ -88,20 +88,20 @@
                 <!-- 高度自适应需添加外层 -->
                 <ul>
                     @foreach($news as $new)
-                    <li><a href="/h/thread-{{$new->id}}.html" title="{{$new->title}}">{{$new->title}}</a></li>
+                    <li><a href="/thread-{{$new->id}}.html" title="{{$new->title}}">{{$new->title}}</a></li>
                     @endforeach
                 </ul>
             </div><div class="con">
                 <!-- 高度自适应需添加外层 -->
                 <ul>
                     @foreach($news as $new)
-                    <li><a href="/h/thread-{{$new->id}}.html" title="{{$new->title}}">{{$new->title}}</a></li>
+                    <li><a href="/thread-{{$new->id}}.html" title="{{$new->title}}">{{$new->title}}</a></li>
                     @endforeach
                 </ul>
             </div>
         </div>
     </div>
-    <a class="readMore" href="/h/index6.html">进入频道&gt;&gt;</a>
+    <a class="readMore" href="/index6.html">进入频道&gt;&gt;</a>
     <script type="text/javascript">
         TouchSlide( { slideCell:"#tabBox1",
             endFun:function(i){ //高度自适应
@@ -116,7 +116,7 @@
             <ul>
             @foreach($imageNews as $ki => $image)
                 @if($ki <=1)
-                <li><a class="pic" href="/h/thread-{{$image->id}}.html"><img _src="{{env('IMG_URL')}}/{{$image->thumbPic}}" alt="{{$image->title}}" src="{{env('IMG_URL')}}/{{$image->thumbPic}}" /></a>
+                <li><a class="pic" href="/thread-{{$image->id}}.html"><img _src="{{env('IMG_URL')}}/{{$image->thumbPic}}" alt="{{$image->title}}" src="{{env('IMG_URL')}}/{{$image->thumbPic}}" /></a>
                     <p>{{$image->title}}</p>
                 </li>
                 @endif
@@ -125,7 +125,7 @@
             <ul>
                 @foreach($imageNews as $ki => $image)
                 @if($ki >1 && $ki <=3)
-                <li><a class="pic" href=""><img _src="{{env('IMG_URL')}}/{{$image->thumbPic}}" alt="{{$image->title}}" src="{{env('IMG_URL')}}/{{$image->thumbPic}}" /></a>
+                <li><a class="pic" href="/thread-{{$image}}.html"><img _src="{{env('IMG_URL')}}/{{$image->thumbPic}}" alt="{{$image->title}}" src="{{env('IMG_URL')}}/{{$image->thumbPic}}" /></a>
                     <p>{{$image->title}}</p>
                 </li>
                 @endif
@@ -134,7 +134,7 @@
             <ul>
                 @foreach($imageNews as $ki => $image)
                     @if($ki >3)
-                        <li><a class="pic" href=""><img _src="{{env('IMG_URL')}}/{{$image->thumbPic}}" alt="{{$image->title}}" src="{{env('IMG_URL')}}/{{$image->thumbPic}}" /></a>
+                        <li><a class="pic" href="/thread-{{$image->id}}.html"><img _src="{{env('IMG_URL')}}/{{$image->thumbPic}}" alt="{{$image->title}}" src="{{env('IMG_URL')}}/{{$image->thumbPic}}" /></a>
                             <p>{{$image->title}}</p>
                         </li>
                     @endif
@@ -159,82 +159,82 @@
     <!-- Tab切换 -->
     <div id="tabBox2" class="tabBox">
         <div class="hd">
-            <h3><a href="/h/index1.html" >价格</a><span>Focus</span></h3>
+            <h3><a href="/index1.html" >价格</a><span>Focus</span></h3>
 
         </div>
         <div class="bd">
             <ul>
                 @foreach($priceNews as $price)
-                <li><a href="/h/thread-{{$price->id}}.html" title="{{$price->title}}">{{$price->title}}</a></li>
+                <li><a href="/thread-{{$price->id}}.html" title="{{$price->title}}">{{$price->title}}</a></li>
                 @endforeach
             </ul>
         </div>
     </div>
-    <a class="readMore" href="/h/index1.html">进入频道&gt;&gt;</a>
+    <a class="readMore" href="/index1.html">进入频道&gt;&gt;</a>
     <script type="text/javascript">TouchSlide( { slideCell:"#tabBox2" } );</script>
 
     <div class="ad_wap"></div>
 
     <div id="tabBox3" class="tabBox">
         <div class="hd">
-            <h3><a href="/h/index4.html" >功效</a><span>Tech</span></h3>
+            <h3><a href="/index4.html" >功效</a><span>Tech</span></h3>
 
         </div>
         <div class="bd">
             <ul>
                 @foreach($effectNews as $effect)
-                <li><a href="/h/thread-{{$effect->id}}.html" title="{{$effect->title}}">{{$effect->title}}</a></li>
+                <li><a href="/thread-{{$effect->id}}.html" title="{{$effect->title}}">{{$effect->title}}</a></li>
                 @endforeach
             </ul>
         </div>
     </div>
-    <a class="readMore" href="/h/index4.html">进入频道&gt;&gt;</a>
+    <a class="readMore" href="/index4.html">进入频道&gt;&gt;</a>
     <script type="text/javascript">TouchSlide( { slideCell:"#tabBox3" } );</script>
 
     <div id="tabBox4" class="tabBox">
         <div class="hd">
-            <h3><a href="/h/index10.html">种植</a><span></span></h3>
+            <h3><a href="/index10.html">种植</a><span></span></h3>
 
         </div>
         <div class="bd">
             <ul>
                 @foreach($plantNews as $plant)
-                <li><a href="/h/thread-{{$plant->id}}.html" title="{{$plant->title}}">{{$plant->title}}</a></li>
+                <li><a href="/thread-{{$plant->id}}.html" title="{{$plant->title}}">{{$plant->title}}</a></li>
                 @endforeach
             </ul>
         </div>
     </div>
-    <a class="readMore" href="/h/index10.html">进入频道&gt;&gt;</a>
+    <a class="readMore" href="/index10.html">进入频道&gt;&gt;</a>
     <script type="text/javascript">TouchSlide( { slideCell:"#tabBox4" } );</script>
 
     <div id="tabBox5" class="tabBox">
         <div class="hd">
-            <h3><a href="/h/index2.html">冲泡</a><span></span></h3>
+            <h3><a href="/index2.html">冲泡</a><span></span></h3>
         </div>
         <div class="bd">
             <ul>
                 @foreach($fillNews as $fill)
-                <li><a href="/h/index{{$fill->id}}.html" title="{{$fill->title}}">{{$fill->title}}</a></li>
+                <li><a href="/index{{$fill->id}}.html" title="{{$fill->title}}">{{$fill->title}}</a></li>
                 @endforeach
             </ul>
         </div>
     </div>
-    <a class="readMore" href="/h/index2.html">进入频道&gt;&gt;</a>
+    <a class="readMore" href="/index2.html">进入频道&gt;&gt;</a>
     <script type="text/javascript">TouchSlide( { slideCell:"#tabBox5" } );</script>
 
     <div id="tabBox6" class="tabBox">
         <div class="hd">
-            <h3><a href="/h/index12.html">品牌</a><span></span></h3>
+            <h3><a href="/index12.html">品牌</a><span></span></h3>
         </div>
         <div class="bd">
             <ul>
                 @foreach($brandNews as $brand)
-                <li><a href="/h/thread-{{$brand->id}}.html" title="{{$brand->title}}">{{$brand->title}}</a></li>
+                <li><a href="/thread-{{$brand->id}}.html" title="{{$brand->title}}">{{$brand->title}}</a></li>
                 @endforeach
             </ul>
         </div>
     </div>
-    <a class="readMore" href="/h/index12.html">进入频道&gt;&gt;</a>
+    <a class="readMore" href="/index12.html">进入频道&gt;&gt;</a>
     <script type="text/javascript">TouchSlide( { slideCell:"#tabBox6" } );</script>
     <!-- 效果导航 -->
     <div class="effectNav">
