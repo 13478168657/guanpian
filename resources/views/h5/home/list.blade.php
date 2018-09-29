@@ -47,7 +47,7 @@
             @foreach($articles as $article)
             <div class='news_item'><img src="{{env('IMG_URL')}}/{{$article->thumbPic}}" alt="{{$article->title}}" class='avator75'>
                 <div class='news_detail cursor'><a href='/thread-{{$article->id}}.html'><span>{{$article->title}}</span></a>
-                    <p>{{$article->meta_description}}</p>
+                    <p>{{mb_substr($new->meta_description,0,50)}}</p>
                 </div>
             </div>
             @endforeach
