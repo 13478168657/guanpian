@@ -25,9 +25,8 @@
 @yield('content')
 <!--轮播图  end-->
 <!--footer start-->
-@include('layouts.footer')
 <!--footer end-->
-
+@yield('footer')
 @yield('script')
 <script src="/js/jquery.min.js"></script>
 <script src="/js/ft-carousel.min.js"></script>
