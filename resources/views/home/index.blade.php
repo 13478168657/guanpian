@@ -65,7 +65,7 @@
 			<h3><a href=""><span class="rmicon"></span>茶乡视频</a></h3>
 				<embed src='http://player.youku.com/player.php/sid/XMzgxNzg2NTUzNg==/v.swf' allowFullScreen='true' quality='high' width='268' height='200' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>
 				<br/><br/>
-                <h3><a href=""><span class="rmicon"></span>平台公告</a></h3>
+                <h3><a href="/index14.html"><span class="rmicon"></span>平台公告</a></h3>
               
                 <ul class="list14">
                     @foreach($publicNews as $publicNew)
@@ -83,7 +83,7 @@
             <div class="example">
                 <div class="ft-carousel" id="carousel_1">
                     <ul class="carousel-inner left-inner clearfix">
-                        <li><a href="">瓜片鉴别</a></li>
+                        <li><a href="/index9.html">瓜片鉴别</a></li>
                     </ul>
                     <ul class="news_img_xiao clearfix">
                         @foreach($knowNews as $knKey => $knew)
@@ -151,7 +151,7 @@
         </div>
         <div class="content-r">
             <div class="box mb25" id="rmw_fangtan">
-                <h3><a href=""><span class="rmicon"></span>瓜片冲泡方法</a></h3>
+                <h3><a href="/index2.html"><span class="rmicon"></span>瓜片冲泡方法</a></h3>
                 @foreach($fillNews as $fillKey => $fillNew)
                     @if($fillKey == 0)
                 <p class="imgstyle"><a href="/thread-{{$fillNew->id}}.html" target="_blank"><img src="{{env('IMG_URL')}}/{{$fillNew->thumbPic}}" alt="{{$fillNew->title}}" width="130" height="90" border="0"></a>{{$fillNew->title}}<a href="/thread-{{$fillNew->id}}.html">［阅读] </a>
@@ -179,7 +179,7 @@
             <div class="example">
                 <div class="ft-carousel" id="carousel_1">
                     <ul class="carousel-inner left-inner clearfix">
-                        <li><a href="">徽茶</a></li>
+                        <li><a href="/index12.html">徽茶</a></li>
                     </ul>
                     <ul class="news_img_xiao clearfix">
                         @foreach($brandNews as $brandKey => $brandNew)
@@ -243,7 +243,7 @@
 
         <div class="content-r">
             <div class="box mb25" id="rmw_fangtan">
-                <h3><a href=""><span class="rmicon"></span>瓜片功效</a></h3>
+                <h3><a href="/index4.html"><span class="rmicon"></span>瓜片功效</a></h3>
                 @foreach($effectNews as $effKey => $effNew)
                     @if($effKey == 0)
                 <p class="imgstyle">
