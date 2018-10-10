@@ -80,11 +80,11 @@ $links = Link::orderBy('id','desc')->get();
         </table>
     </div>
     <div class="footer">
-        <p><a href="/about/list">关于本站</a><span> | </span><a
-                    href="/instruction/list">版权声明</a><span> | </span><a
-                    href="/payment/list">本站购物</a><span> | </span><a
-                    href="/notice/list">免责声明</a><span> | </span><a
-                    href="/consult/list">联系方式</a><span></span>
+        <p><a href="/about">关于本站</a><span> | </span><a
+                    href="/instruction">版权声明</a><span> | </span><a
+                    href="/payment">本站购物</a><span> | </span><a
+                    href="/notice">免责声明</a><span> | </span><a
+                    href="/consult">联系方式</a><span></span>
 
         </p>
         <p class="copyright">六安瓜片网 www.guapian.cn</p>

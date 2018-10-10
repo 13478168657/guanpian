@@ -49,10 +49,11 @@ Route::group(['domain' => '{account}.guapian.cn'], function () {
 //    Route::get('index{id}.html','Home\HomeController@lists');
 //    Route::get('thread-{id}.html','Home\HomeController@detail');
 ////    Route::get('g-{id}.html','Home\HomeController@goodsDetail');
-//    Route::get('consult','Consult\ConsultController@index');
-//    Route::get('instruction','Instruction\InstructionController@index');
-//    Route::get('notice','Notice\NoticeController@index');
-//    Route::get('payment','Payment\PaymentController@index');
+    Route::get('consult','Consult\ConsultController@index');
+    Route::get('instruction','Instruction\InstructionController@index');
+    Route::get('notice','Notice\NoticeController@index');
+    Route::get('payment','Payment\PaymentController@index');
+    Route::get('about','Payment\PaymentController@index');
 //    Route::get('/h/index','Home\HomeController@hindex');
 //    Route::get('/h/index{id}.html','Home\HomeController@hlist');
 //    Route::get('/h/thread-{id}.html','Home\HomeController@hdetail');
