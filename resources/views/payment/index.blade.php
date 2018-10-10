@@ -4,7 +4,7 @@
 <meta name="description" content="{{$payment->meta_description}}" />
 @section('content')
     <link rel="stylesheet" href="/css/details.css">
-    @include('layouts.header')
+
     <div class="news w clearfix">
         <div class="news-l">
             <div class="mainLeft">

@@ -1,10 +1,9 @@
 @extends('layouts.main')
-<title>{{$about->name}}-马陆葡萄网</title>
+<title>{{$about->name}}-六安瓜片网</title>
 <meta name="keywords" content="{{$about->meta_keyword}}" />
 <meta name="description" content="{{$about->meta_description}}" />
 @section('content')
     <link rel="stylesheet" href="/css/details.css">
-    @include('layouts.header')
     <div class="news w clearfix">
         <div class="news-l">
             <div class="mainLeft">
