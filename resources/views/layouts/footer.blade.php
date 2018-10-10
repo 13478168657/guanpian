@@ -45,13 +45,13 @@ $links = Link::orderBy('id','desc')->get();
                         <dd>六安瓜片产业服务部</dd>
                         <dd>联系人：黄先生 18621791688</dd>
                     </dl>
-                   <!--
-				    <dl class="copyright clearfix">
-                        <dt>茶园证补办</dt>
-                        <dd>地址：六安县六安城北科技创业园5号楼4层408办公室</dd>
-                        <dd>电话：0572-5223705</dd>
-                    </dl>
-				   -->
+                    <!--
+                     <dl class="copyright clearfix">
+                         <dt>茶园证补办</dt>
+                         <dd>地址：六安县六安城北科技创业园5号楼4层408办公室</dd>
+                         <dd>电话：0572-5223705</dd>
+                     </dl>
+                    -->
                 </th>
                 <td class="table_co" valign="top"><h5>联系我们</h5>
                     <p>安徽省六安市高铁站二楼</p>
@@ -69,7 +69,7 @@ $links = Link::orderBy('id','desc')->get();
                         <dt>友情链接</dt>
                         <dd id="friendlinks">
                             @foreach($links as $link)
-                            <a href="{{$link->url}}" target="_blank">{{$link->name}}</a>
+                                <a href="{{$link->url}}" target="_blank">{{$link->name}}</a>
                                 <i>-</i>
                             @endforeach
                         </dd>
@@ -80,13 +80,11 @@ $links = Link::orderBy('id','desc')->get();
         </table>
     </div>
     <div class="footer">
-        <p><a href="/html/list_189.html">关于本站</a><span> | </span><a
-                    href="/html/list_190.html">版权声明</a><span> | </span><a
-                    href="/html/list_247.html">本站购物</a><span> | </span><a
-                    href="/html/list_249.html">展会合作</a><span> | </span><a
-                    href="/html/list_250.html">免责声明</a><span> | </span><a
-                    href="/html/list_191.html">联系方式</a><span> | </span><a
-                    href="/html/list_289.html">友情链接</a><span>  </span>
+        <p><a href="/about/list">关于本站</a><span> | </span><a
+                    href="/instruction/list">版权声明</a><span> | </span><a
+                    href="/payment/list">本站购物</a><span> | </span><a
+                    href="/notice/list">免责声明</a><span> | </span><a
+                    href="/consult/list">联系方式</a><span></span>
 
         </p>
         <p class="copyright">六安瓜片网 www.guapian.cn</p>
