@@ -1,5 +1,5 @@
 @extends('layouts.main')
-<title>{{$payment->name}}-马陆葡萄网</title>
+<title>{{$payment->name}}-六安瓜片网</title>
 <meta name="keywords" content="{{$payment->meta_keyword}}" />
 <meta name="description" content="{{$payment->meta_description}}" />
 @section('content')

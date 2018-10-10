@@ -1,5 +1,5 @@
 @extends('layouts.main')
-<title>{{$consult->name}}-马陆葡萄网</title>
+<title>{{$consult->name}}-六安瓜片网</title>
 <meta name="keywords" content="{{$consult->meta_keyword}}" />
 <meta name="description" content="{{$consult->meta_description}}" />
 @section('content')

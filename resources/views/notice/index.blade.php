@@ -1,5 +1,5 @@
 @extends('layouts.main')
-<title>{{$notice->name}}-马陆葡萄网</title>
+<title>{{$notice->name}}-六安瓜片网</title>
 <meta name="keywords" content="{{$notice->meta_keyword}}" />
 <meta name="description" content="{{$notice->meta_description}}" />
 @section('content')
