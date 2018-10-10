@@ -53,7 +53,7 @@ Route::group(['domain' => '{account}.guapian.cn'], function () {
     Route::get('instruction','Instruction\InstructionController@index');
     Route::get('notice','Notice\NoticeController@index');
     Route::get('payment','Payment\PaymentController@index');
-    Route::get('about','Payment\PaymentController@index');
+    Route::get('about','About\AboutController@index');
 //    Route::get('/h/index','Home\HomeController@hindex');
 //    Route::get('/h/index{id}.html','Home\HomeController@hlist');
 //    Route::get('/h/thread-{id}.html','Home\HomeController@hdetail');
