@@ -58,7 +58,11 @@ class HomeController extends Controller
         }
 
 //        $request->page = $page;
-        $pageSize = 10;
+        if($id == 11){
+            $pageSize = 12;
+        }else{
+            $pageSize = 10;
+        }
         $category =  Category::where('id',$id)->first();
         $categories = Category::where('base_id',1)->where('id','!=',$category->id)->orderBy('number','desc')->limit(3)->get();
         $articles = Article::where('status',3)->where('category_id',$id)->orderBy('created_at','desc')->paginate($pageSize);
